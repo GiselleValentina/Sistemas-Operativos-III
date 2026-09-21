@@ -1,0 +1,204 @@
+COMANDOS UTILIZADOS PARA EL LABORATORIO DEL MÓDULO I
+
+𝗖𝗢𝗠𝗔𝗡𝗗𝗢𝗦 𝗨𝗦𝗔𝗗𝗢𝗦 𝗣𝗥𝗔́𝗖𝗧𝗜𝗖𝗔 𝟭.𝟭: 𝗜𝗡𝗦𝗧𝗔𝗟𝗔𝗖𝗜𝗢́𝗡 𝗗𝗘𝗟 𝗦𝗘𝗥𝗩𝗜𝗗𝗢𝗥 𝗥𝗘𝗗 𝗛𝗔𝗧 𝗘𝗡𝗧𝗘𝗥𝗣𝗥𝗜𝗦𝗘 𝗟𝗜𝗡𝗨𝗫
+
+(En este laboratorio no se requirió el uso de comandos)
+
+============================================================================================================================================================================================
+𝗖𝗢𝗠𝗔𝗡𝗗𝗢𝗦 𝗨𝗦𝗔𝗗𝗢𝗦 𝗣𝗥𝗔́𝗖𝗧𝗜𝗖𝗔 𝟭.𝟮: 𝗖𝗢𝗡𝗙𝗜𝗚𝗨𝗥𝗔𝗖𝗜𝗢́𝗡 𝗗𝗘 𝗣𝗔𝗥𝗔𝗠𝗘𝗧𝗥𝗢𝗦 𝗗𝗘 𝗥𝗘𝗗
+
+1) Configure los parametros de red utilizando DHCP e IP estatica a través de la terminal (explique TODAS las formas que redhat permite configurarlo)
+ 
+Paso previo
+ 
+𝗶𝗽 𝗮𝗱𝗱𝗿 𝘀𝗵𝗼𝘄
+Muestra todas las interfaces de red y sus direcciones IP actuales.
+ 
+Forma 1: Línea de comandos (nmcli)
+ 
+𝘀𝘂𝗱𝗼 𝗻𝗺𝗰𝗹𝗶 𝗰𝗼𝗻𝗻𝗲𝗰𝘁𝗶𝗼𝗻 𝗺𝗼𝗱𝗶𝗳𝘆 𝗲𝗻𝘀𝟭𝟲𝟬 𝗶𝗽𝘃𝟰.𝗺𝗲𝘁𝗵𝗼𝗱 𝗮𝘂𝘁𝗼
+Configura la interfaz ens160 para obtener IP por DHCP.
+ 
+𝘀𝘂𝗱𝗼 𝗻𝗺𝗰𝗹𝗶 𝗰𝗼𝗻𝗻𝗲𝗰𝘁𝗶𝗼𝗻 𝘂𝗽 𝗲𝗻𝘀𝟭𝟲𝟬
+Aplica la configuración y reactiva la tarjeta ens160.
+ 
+𝘀𝘂𝗱𝗼 𝗻𝗺𝗰𝗹𝗶 𝗰𝗼𝗻𝗻𝗲𝗰𝘁𝗶𝗼𝗻 𝗺𝗼𝗱𝗶𝗳𝘆 𝗲𝗻𝘀𝟭𝟲𝟬 𝗶𝗽𝘃𝟰.𝗺𝗲𝘁𝗵𝗼𝗱 𝗺𝗮𝗻𝘂𝗮𝗹 𝗶𝗽𝘃𝟰.𝗮𝗱𝗱𝗿𝗲𝘀𝘀𝗲𝘀 𝟭𝟵𝟮.𝟭𝟲𝟴.𝟬.𝟭𝟱𝟬/𝟮𝟰 𝗶𝗽𝘃𝟰.𝗴𝗮𝘁𝗲𝘄𝗮𝘆 𝟭𝟵𝟮.𝟭𝟲𝟴.𝟬.𝟭
+Asigna la IP fija 192.168.0.150, máscara /24 y gateway 192.168.0.1.
+ 
+𝗶𝗽 -𝟰 𝗮𝗱𝗱𝗿 𝘀𝗵𝗼𝘄 𝗲𝗻𝘀𝟭𝟲𝟬
+Muestra únicamente la dirección IPv4 asignada a ens160.
+ 
+Forma 2: Interfaz gráfica en texto (nmtui)
+ 
+𝘀𝘂𝗱𝗼 𝗻𝗺𝘁𝘂𝗶
+Abre el menú interactivo en terminal para configurar la red.
+ 
+𝗶𝗽 𝗮𝗱𝗱𝗿 𝘀𝗵𝗼𝘄 𝗲𝗻𝘀𝟭𝟲𝟬
+Verifica la IP fija (192.168.0.160) asignada desde el menú visual.
+ 
+Forma 3: Archivos de configuración (Keyfiles)
+ 
+𝘀𝘂𝗱𝗼 𝗻𝗮𝗻𝗼 /𝗲𝘁𝗰/𝗡𝗲𝘁𝘄𝗼𝗿𝗸𝗠𝗮𝗻𝗮𝗴𝗲𝗿/𝘀𝘆𝘀𝘁𝗲𝗺-𝗰𝗼𝗻𝗻𝗲𝗰𝘁𝗶𝗼𝗻𝘀/𝗲𝗻𝘀𝟭𝟲𝟬.𝗻𝗺𝗰𝗼𝗻𝗻𝗲𝗰𝘁𝗶𝗼𝗻
+Abre el archivo de texto de la tarjeta para editar la red.
+ 
+𝘀𝘂𝗱𝗼 𝗻𝗺𝗰𝗹𝗶 𝗰𝗼𝗻𝗻𝗲𝗰𝘁𝗶𝗼𝗻 𝗿𝗲𝗹𝗼𝗮𝗱
+Carga en memoria los cambios guardados en el archivo de texto.
+ 
+𝘀𝘂𝗱𝗼 𝗻𝗺𝗰𝗹𝗶 𝗰𝗼𝗻𝗻𝗲𝗰𝘁𝗶𝗼𝗻 𝘂𝗽 𝗲𝗻𝘀𝟭𝟲𝟬
+Reactiva la interfaz para aplicar los parámetros del archivo.
+ 
+𝗶𝗽 𝗮𝗱𝗱𝗿 𝘀𝗵𝗼𝘄 𝗲𝗻𝘀𝟭𝟲𝟬
+Confirma la IP activa cargada desde el archivo de configuración.
+ 
+Forma 4: Comandos directos del kernel (ip)
+ 
+𝘀𝘂𝗱𝗼 𝗶𝗽 𝗮𝗱𝗱𝗿 𝗳𝗹𝘂𝘀𝗵 𝗱𝗲𝘃 𝗲𝗻𝘀𝟭𝟲𝟬
+Borra las direcciones IP asignadas a la tarjeta en la memoria del kernel.
+ 
+𝘀𝘂𝗱𝗼 𝗶𝗽 𝗮𝗱𝗱𝗿 𝗮𝗱𝗱 𝟭𝟵𝟮.𝟭𝟲𝟴.𝟬.𝟭𝟬𝟮/𝟮𝟰 𝗱𝗲𝘃 𝗲𝗻𝘀𝟭𝟲𝟬
+Asigna temporalmente la IP 192.168.0.102/24 directamente a la tarjeta.
+ 
+𝘀𝘂𝗱𝗼 𝗻𝗺𝗰𝗹𝗶 𝗱𝗲𝘃𝗶𝗰𝗲 𝘀𝗲𝘁 𝗲𝗻𝘀𝟭𝟲𝟬 𝗺𝗮𝗻𝗮𝗴𝗲𝗱 𝗻𝗼
+Desconecta la interfaz del control de NetworkManager.
+ 
+𝘀𝘂𝗱𝗼 𝗶𝗽 𝗹𝗶𝗻𝗸 𝘀𝗲𝘁 𝗲𝗻𝘀𝟭𝟲𝟬 𝘂𝗽
+Enciende la interfaz de red a nivel de hardware.
+ 
+𝘀𝘂𝗱𝗼 𝗶𝗽 𝗿𝗼𝘂𝘁𝗲 𝗮𝗱𝗱 𝗱𝗲𝗳𝗮𝘂𝗹𝘁 𝘃𝗶𝗮 𝟭𝟵𝟮.𝟭𝟲𝟴.𝟬.𝟭 𝗱𝗲𝘃 𝗲𝗻𝘀𝟭𝟲𝟬
+Define la ruta por defecto hacia la IP del router 192.168.0.1.
+ 
+𝗶𝗽 𝗮𝗱𝗱𝗿 𝘀𝗵𝗼𝘄 𝗲𝗻𝘀𝟭𝟲𝟬
+Muestra la IP asignada directamente en el kernel.
+ 
+2) Configure los DNS de google 8.8.8.8 - 8.8.4.4 en su sistema
+ 
+𝘀𝘂𝗱𝗼 𝗻𝗺𝗰𝗹𝗶 𝗰𝗼𝗻𝗻𝗲𝗰𝘁𝗶𝗼𝗻 𝗺𝗼𝗱𝗶𝗳𝘆 𝗲𝗻𝘀𝟭𝟲𝟬 𝗶𝗽𝘃𝟰.𝗱𝗻𝘀 "𝟴.𝟴.𝟴.𝟴 𝟴.𝟴.𝟰.𝟰"
+Guarda los servidores DNS 8.8.8.8 y 8.8.4.4 en el perfil de la interfaz.
+ 
+𝘀𝘂𝗱𝗼 𝗻𝗺𝗰𝗹𝗶 𝗰𝗼𝗻𝗻𝗲𝗰𝘁𝗶𝗼𝗻 𝘂𝗽 𝗲𝗻𝘀𝟭𝟲𝟬
+Reactiva la tarjeta para aplicar y guardar los nuevos servidores DNS.
+ 
+𝗰𝗮𝘁 /𝗲𝘁𝗰/𝗿𝗲𝘀𝗼𝗹𝘃.𝗰𝗼𝗻𝗳
+Muestra el archivo del sistema para confirmar los DNS asignados.
+ 
+𝗽𝗶𝗻𝗴 -𝗰 𝟰 𝗴𝗼𝗼𝗴𝗹𝗲.𝗰𝗼𝗺
+Comprueba la conectividad a Internet y la resolución de nombres DNS.
+
+============================================================================================================================================================================================
+𝗖𝗢𝗠𝗔𝗡𝗗𝗢𝗦 𝗨𝗦𝗔𝗗𝗢𝗦 𝗣𝗥𝗔́𝗖𝗧𝗜𝗖𝗔 𝟭.𝟯: 𝗚𝗘𝗦𝗧𝗜𝗢́𝗡 𝗗𝗘 𝗨𝗦𝗨𝗔𝗥𝗜𝗢 𝗬 𝗚𝗥𝗨𝗣𝗢𝗦
+
+1. Cree un usuario con su nombre y agréguelo al grupo "wheel" para que tenga permisos de super usuario
+
+𝘀𝘂𝗱𝗼 𝘂𝘀𝗲𝗿𝗮𝗱𝗱 𝗱𝗲𝗿𝘄𝗶𝗻
+Crea la nueva cuenta de usuario en el sistema con el nombre "derwin".
+
+𝘀𝘂𝗱𝗼 𝗽𝗮𝘀𝘀𝘄𝗱 𝗱𝗲𝗿𝘄𝗶𝗻
+Establece la contraseña inicial para que el usuario "derwin" pueda autenticarse.
+
+𝘀𝘂𝗱𝗼 𝘂𝘀𝗲𝗿𝗺𝗼𝗱 -𝗮𝗚 𝘄𝗵𝗲𝗲𝗹 𝗱𝗲𝗿𝘄𝗶𝗻
+Agrega al usuario "derwin" al grupo "wheel" para concederle privilegios de superusuario.
+
+𝗶𝗱 𝗱𝗲𝗿𝘄𝗶𝗻
+Muestra los datos del usuario "derwin" para confirmar que fue creado y pertenece al grupo "wheel".
+
+2. Cree un grupo llamado guest, cree un usuario y agréguelo al grupo creado anteriormente
+
+𝘀𝘂𝗱𝗼 𝗴𝗿𝗼𝘂𝗽𝗮𝗱𝗱 𝗴𝘂𝗲𝘀𝘁
+Crea un nuevo grupo de usuarios en el sistema llamado "guest".
+
+𝘀𝘂𝗱𝗼 𝘂𝘀𝗲𝗿𝗮𝗱𝗱 𝗱𝗮𝘃𝗶𝗱
+Crea la nueva cuenta de usuario en el sistema con el nombre "david".
+
+𝘀𝘂𝗱𝗼 𝘂𝘀𝗲𝗿𝗺𝗼𝗱 -𝗮𝗚 𝗴𝘂𝗲𝘀𝘁 𝗱𝗮𝘃𝗶𝗱
+Añade al usuario "david" como integrante del grupo "guest" previamente creado.
+
+𝘀𝘂𝗱𝗼 𝗽𝗮𝘀𝘀𝘄𝗱 𝗱𝗮𝘃𝗶𝗱
+Establece la contraseña inicial de acceso para la cuenta de "david".
+
+𝗶𝗱 𝗱𝗮𝘃𝗶𝗱
+Muestra la información de la cuenta "david" para verificar su existencia y su pertenencia al grupo "guest".
+
+3. Elimine el usuario y el grupo previamente creado
+
+𝘀𝘂𝗱𝗼 𝘂𝘀𝗲𝗿𝗱𝗲𝗹 -𝗿 𝗱𝗮𝘃𝗶𝗱
+Elimina definitivamente la cuenta del usuario "david" junto con su carpeta personal y archivos.
+
+𝘀𝘂𝗱𝗼 𝗴𝗿𝗼𝘂𝗽𝗱𝗲𝗹 𝗴𝘂𝗲𝘀𝘁
+Elimina el grupo "guest" del sistema.
+
+𝗶𝗱 𝗱𝗮𝘃𝗶𝗱
+Comprueba que el usuario "david" ya no existe en el sistema tras la eliminación.
+
+𝗴𝗲𝘁𝗲𝗻𝘁 𝗴𝗿𝗼𝘂𝗽 𝗴𝘂𝗲𝘀𝘁
+Consulta la base de datos del sistema para verificar que el grupo "guest" ya no existe (al quedar la respuesta en blanco confirma su eliminación).
+
+============================================================================================================================================================================================
+
+𝗖𝗢𝗠𝗔𝗡𝗗𝗢𝗦 𝗨𝗦𝗔𝗗𝗢𝗦 𝗣𝗥𝗔́𝗖𝗧𝗜𝗖𝗔 𝟭.𝟰: 𝗚𝗘𝗦𝗧𝗜𝗢́𝗡 𝗗𝗘 𝗣𝗘𝗥𝗠𝗜𝗦𝗢𝗦 𝗗𝗘 𝗔𝗥𝗖𝗛𝗜𝗩𝗢𝗦
+
+Paso 1: Cree una carpeta llamada materia, dentro cree un archivo llamado estudiante.txt y edítelo utilizando 'vi', agregue su nombre y Matrícula
+
+𝗺𝗸𝗱𝗶𝗿 𝗺𝗮𝘁𝗲𝗿𝗶𝗮
+Crea el directorio o carpeta llamado materia en tu ubicación actual.
+
+𝗰𝗱 𝗺𝗮𝘁𝗲𝗿𝗶𝗮
+Accede y te ubica dentro de la carpeta materia.
+
+𝘁𝗼𝘂𝗰𝗵 𝗲𝘀𝘁𝘂𝗱𝗶𝗮𝗻𝘁𝗲.𝘁𝘅𝘁
+Genera el archivo estudiante.txt completamente en blanco.
+
+𝘃𝗶 𝗲𝘀𝘁𝘂𝗱𝗶𝗮𝗻𝘁𝗲.𝘁𝘅𝘁
+Abre el editor para agregar tu nombre y matrícula.
+
+𝗰𝗮𝘁 𝗲𝘀𝘁𝘂𝗱𝗶𝗮𝗻𝘁𝗲.𝘁𝘅𝘁
+Imprime y muestra directamente en la terminal el contenido guardado en el archivo.
+
+Paso 2: Modifique los permisos para que solo el usuario propietario del archivo pueda tener control total
+
+𝗹𝘀 -𝗹 𝗲𝘀𝘁𝘂𝗱𝗶𝗮𝗻𝘁𝗲.𝘁𝘅𝘁
+Muestra los permisos iniciales y confirma quién es el usuario y grupo propietario.
+
+𝗰𝗵𝗺𝗼𝗱 𝟳𝟬𝟬 𝗲𝘀𝘁𝘂𝗱𝗶𝗮𝗻𝘁𝗲.𝘁𝘅𝘁
+Otorga permisos de control total (rwx) únicamente al usuario propietario y elimina cualquier acceso para el grupo y otros.
+
+𝗹𝘀 -𝗹 𝗲𝘀𝘁𝘂𝗱𝗶𝗮𝗻𝘁𝗲.𝘁𝘅𝘁
+Comprueba que los permisos cambiaron a -rwx------.
+
+Paso 3: Modifique los permisos para que solo el grupo propietario del archivo pueda tener control total
+
+𝗰𝗵𝗺𝗼𝗱 𝟬𝟳𝟬 𝗲𝘀𝘁𝘂𝗱𝗶𝗮𝗻𝘁𝗲.𝘁𝘅𝘁
+Quita todos los permisos al usuario propietario y le otorga control total (rwx) al grupo propietario.
+
+𝗹𝘀 -𝗹 𝗲𝘀𝘁𝘂𝗱𝗶𝗮𝗻𝘁𝗲.𝘁𝘅𝘁
+Comprueba que los permisos cambiaron a ----rwx---.
+
+Paso 4: Cree una nueva carpeta llamada materia2 y cree una copia del archivo estudiante.txt dentro de ella
+
+𝗰𝗱 ..
+Retrocede un nivel para salir de la carpeta materia y regresar al directorio anterior.
+
+𝗺𝗸𝗱𝗶𝗿 𝗺𝗮𝘁𝗲𝗿𝗶𝗮𝟮
+Crea el nuevo directorio llamado materia2.
+
+𝗰𝗵𝗺𝗼𝗱 𝟳𝟳𝟬 𝗺𝗮𝘁𝗲𝗿𝗶𝗮/𝗲𝘀𝘁𝘂𝗱𝗶𝗮𝗻𝘁𝗲.𝘁𝘅𝘁
+Otorga permisos de lectura y acceso al usuario propietario para resolver el error de lectura.
+
+𝗰𝗽 𝗺𝗮𝘁𝗲𝗿𝗶𝗮/𝗲𝘀𝘁𝘂𝗱𝗶𝗮𝗻𝘁𝗲.𝘁𝘅𝘁 𝗺𝗮𝘁𝗲𝗿𝗶𝗮𝟮/
+Duplica el archivo estudiante.txt ubicado en materia/ y coloca una copia dentro de materia2/.
+
+𝗰𝗱 𝗺𝗮𝘁𝗲𝗿𝗶𝗮𝟮
+Te ubica dentro de la nueva carpeta materia2.
+
+𝗹𝘀
+Lista el contenido de materia2 para confirmar que el archivo estudiante.txt se copió correctamente.
+
+Paso 5: Elimine la carpeta materia junto con el archivo estudiante.txt
+
+𝗰𝗱 ..
+Retrocede un nivel para salir de la carpeta materia2.
+
+𝗿𝗺 -𝗿 𝗺𝗮𝘁𝗲𝗿𝗶𝗮
+Borra de forma permanente y recursiva la carpeta materia junto con el archivo que contiene en su interior.
+
+𝗹𝘀
+Muestra los directorios para verificar que materia ya no existe y materia2 permanece en el sistema.
