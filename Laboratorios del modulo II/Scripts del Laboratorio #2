@@ -1,1 +1,147 @@
+𝗖𝗢𝗠𝗔𝗡𝗗𝗢𝗦 𝗨𝗦𝗔𝗗𝗢𝗦 𝗣𝗔𝗥𝗔 𝗘𝗟 𝗟𝗔𝗕𝗢𝗥𝗔𝗧𝗢𝗥𝗜𝗢 𝗗𝗘𝗟 𝗠𝗢́𝗗𝗨𝗟𝗢 𝗜𝗜
 
+𝗖𝗢𝗠𝗔𝗡𝗗𝗢𝗦 𝗨𝗦𝗔𝗗𝗢𝗦 𝗣𝗥𝗔́𝗖𝗧𝗜𝗖𝗔 𝟮.𝟭: 𝗚𝗘𝗦𝗧𝗜𝗢́𝗡 𝗗𝗘 𝗥𝗘𝗣𝗢𝗦𝗜𝗧𝗢𝗥𝗜𝗢𝗦 𝗬 𝗣𝗔𝗤𝗨𝗘𝗧𝗘𝗦 𝗖𝗢𝗡 𝗗𝗡𝗙 𝗘𝗡 𝗥𝗘𝗗 𝗛𝗔𝗧 𝗘𝗡𝗧𝗘𝗥𝗣𝗥𝗜𝗦𝗘 𝗟𝗜𝗡𝗨𝗫
+
+Paso 1: Actualizar los repositorios del sistema (Update & Upgrade)
+
+𝘀𝘂𝗱𝗼 𝗱𝗻𝗳 𝗰𝗵𝗲𝗰𝗸-𝘂𝗽𝗱𝗮𝘁𝗲
+Sincroniza la lista de paquetes y verifica cuáles tienen actualizaciones disponibles.
+
+𝘀𝘂𝗱𝗼 𝗱𝗻𝗳 𝘂𝗽𝗴𝗿𝗮𝗱𝗲
+Descarga e instala las versiones más recientes de todos los programas del sistema tras pedir confirmación manual.
+
+Paso 2: Enumerar los repositorios actualmente en uso en su servidor
+
+𝘀𝘂𝗱𝗼 𝗱𝗻𝗳 𝗿𝗲𝗽𝗼𝗹𝗶𝘀𝘁
+Muestra en pantalla la lista de todos los repositorios de software activos y habilitados en RHEL 10.
+
+Paso 3: Buscar la herramienta en la caché de los repositorios
+
+𝗱𝗻𝗳 𝘀𝗲𝗮𝗿𝗰𝗵 𝗯𝗮𝘀𝗵𝘁𝗼𝗽
+Realiza una búsqueda en la base de datos local para comprobar si Bashtop está disponible en los repositorios por defecto.
+
+Paso 4: Instalar la herramienta "Bashtop Resource Monitor" (Agregar al repositorio local)
+
+𝘀𝘂𝗱𝗼 𝗱𝗻𝗳 𝗶𝗻𝘀𝘁𝗮𝗹𝗹 𝗴𝗶𝘁 𝗺𝗮𝗸𝗲
+Instala las herramientas necesarias para descargar y procesar el código fuente del repositorio.
+
+𝗴𝗶𝘁 𝗰𝗹𝗼𝗻𝗲 𝗵𝘁𝘁𝗽𝘀://𝗴𝗶𝘁𝗵𝘂𝗯.𝗰𝗼𝗺/𝗮𝗿𝗶𝘀𝘁𝗼𝗰𝗿𝗮𝘁𝗼𝘀/𝗯𝗮𝘀𝗵𝘁𝗼𝗽.𝗴𝗶𝘁
+Descarga el código fuente oficial de Bashtop desde GitHub a tu máquina virtual.
+
+𝗰𝗱 𝗯𝗮𝘀𝗵𝘁𝗼𝗽
+Entra al directorio que contiene los archivos de instalación descargados de Bashtop.
+
+𝘀𝘂𝗱𝗼 𝗺𝗮𝗸𝗲 𝗶𝗻𝘀𝘁𝗮𝗹𝗹
+Compila e instala la aplicación dentro de los directorios del sistema para poder ejecutarla.
+
+Paso 5: Presentar la herramienta Bashtop
+
+𝗯𝗮𝘀𝗵𝘁𝗼𝗽
+Despliega la interfaz gráfica en tiempo real en la terminal para monitorear el uso de CPU, memoria, discos y procesos.
+
+Paso 6: Desinstalar la herramienta y eliminar todos los archivos de configuración
+
+𝘀𝘂𝗱𝗼 𝗺𝗮𝗸𝗲 𝘂𝗻𝗶𝗻𝘀𝘁𝗮𝗹𝗹
+Ejecuta la rutina de desinstalación desde la carpeta del código fuente para remover el ejecutable del sistema.
+
+𝗿𝗺 -𝗿𝗳 ~/.𝗰𝗼𝗻𝗳𝗶𝗴/𝗯𝗮𝘀𝗵𝘁𝗼𝗽
+Borra de forma definitiva la carpeta oculta donde se guardan las configuraciones y preferencias del usuario.
+
+Paso 7: Eliminar todas las dependencias asociadas a este programa que ya no estén en uso
+
+𝘀𝘂𝗱𝗼 𝗱𝗻𝗳 𝗮𝘂𝘁𝗼𝗿𝗲𝗺𝗼𝘃𝗲
+Limpia el sistema desinstalando las librerías o paquetes secundarios que quedaron huérfanos y sin uso.
+
+============================================================================================================================================================================================
+𝗖𝗢𝗠𝗔𝗡𝗗𝗢𝗦 𝗨𝗦𝗔𝗗𝗢𝗦 𝗣𝗥𝗔́𝗖𝗧𝗜𝗖𝗔 𝟮.𝟮: 𝗖𝗢𝗡𝗙𝗜𝗚𝗨𝗥𝗔𝗖𝗜𝗢́𝗡 𝗗𝗘 𝗧𝗔𝗥𝗘𝗔𝗦 𝗣𝗥𝗢𝗚𝗥𝗔𝗠𝗔𝗗𝗔𝗦 𝗬 𝗔𝗨𝗧𝗢𝗠𝗔𝗧𝗜𝗭𝗔𝗖𝗜𝗢́𝗡 𝗘𝗡 𝗥𝗛𝗘𝗟
+
+Paso 1: Abrir el editor para programar la actualización nocturna y el reinicio semanal
+
+𝘀𝘂𝗱𝗼 𝗰𝗿𝗼𝗻𝘁𝗮𝗯 -𝗲
+Abre el archivo de tareas programadas del administrador con permisos elevados para editar las reglas recurrentes del sistema.
+
+Línea agregada dentro de crontab: 𝟬 𝟮𝟯 * * * 𝗱𝗻𝗳 𝘂𝗽𝗴𝗿𝗮𝗱𝗲 -𝘆
+Programa la actualización automática del sistema de forma silenciosa todas las noches a las 11:00 p.m.
+
+Línea agregada dentro de crontab: 𝟬 𝟯 * * 𝟬 /𝘀𝗯𝗶𝗻/𝘀𝗵𝘂𝘁𝗱𝗼𝘄𝗻 -𝗿 𝗻𝗼𝘄
+Programa el reinicio automático del sistema todos los domingos a las 3:00 a.m. de la madrugada.
+
+Paso 2: Verificar la lista de tareas programadas en Cron
+
+𝘀𝘂𝗱𝗼 𝗰𝗿𝗼𝗻𝘁𝗮𝗯 -𝗹
+Muestra en pantalla la lista de todas las tareas "cron" activas en el archivo del administrador para confirmar que se guardaron correctamente.
+
+Paso 3: Consultar el contenido inicial del directorio /tmp
+
+𝗹𝘀 /𝘁𝗺𝗽
+Lista y muestra en la terminal todos los archivos y subdirectorios temporales presentes antes de programar la eliminación.
+
+Paso 4: Programar la eliminación con permisos de administrador en 1 minuto
+
+𝗲𝗰𝗵𝗼 "𝗿𝗺 -𝗿𝗳 /𝘁𝗺𝗽/*" | 𝘀𝘂𝗱𝗼 𝗮𝘁 𝗻𝗼𝘄 + 𝟭 𝗺𝗶𝗻𝘂𝘁𝗲
+Envía la instrucción de borrado forzado del contenido de /tmp para que el demonio "at" la ejecute con privilegios de superusuario en 60 segundos.
+
+Paso 5: Confirmar la eliminación del contenido de la carpeta
+
+𝗹𝘀 /𝘁𝗺𝗽
+Verifica el resultado tras transcurrir el minuto, mostrando la terminal limpia para confirmar que la tarea ejecutó el borrado exitosamente.
+
+============================================================================================================================================================================================
+𝗖𝗢𝗠𝗔𝗡𝗗𝗢𝗦 𝗨𝗦𝗔𝗗𝗢𝗦 𝗣𝗥𝗔́𝗖𝗧𝗜𝗖𝗔 𝟮.𝟯: 𝗔𝗗𝗠𝗜𝗡𝗜𝗦𝗧𝗥𝗔𝗖𝗜𝗢́𝗡, 𝗙𝗢𝗥𝗠𝗔𝗧𝗘𝗢 𝗬 𝗠𝗢𝗡𝗧𝗔𝗝𝗘 𝗗𝗘 𝗗𝗜𝗦𝗖𝗢𝗦 𝗘𝗡 𝗥𝗛𝗘𝗟
+
+Paso 1: Vaya a las configuraciones de su VM, cree un disco de 20GB y atáchelo a su Máquina Virtual; reinicie el sistema
+
+𝗹𝘀𝗯𝗹𝗸
+Muestra los dispositivos de almacenamiento conectados para verificar que el nuevo disco de 20 GB (nvme0n2) ha sido detectado por el sistema.
+
+Paso 2: Formatéelo como una partición ext4
+
+𝘀𝘂𝗱𝗼 𝗳𝗱𝗶𝘀𝗸 /𝗱𝗲𝘃/𝗻𝘃𝗺𝗲𝟬𝗻𝟮
+Abre la herramienta interactiva para crear la tabla de particiones primaria (nvme0n2p1) utilizando todo el espacio del disco de 20 GB.
+
+𝘀𝘂𝗱𝗼 𝗺𝗸𝗳𝘀.𝗲𝘅𝘁𝟰 /𝗱𝗲𝘃/𝗻𝘃𝗺𝗲𝟬𝗻𝟮𝗽𝟭
+Formatea la nueva partición aplicando el sistema de archivos ext4.
+
+Paso 3: Cree una carpeta en el escritorio y móntelo en dicha carpeta utilizando el comando mount
+
+𝗺𝗸𝗱𝗶𝗿 -𝗽 ~/𝗘𝘀𝗰𝗿𝗶𝘁𝗼𝗿𝗶𝗼/𝗱𝗶𝘀𝗰𝗼_𝗽𝗿𝗮𝗰𝘁𝗶𝗰𝗮
+Crea el directorio disco_practica en el Escritorio para usarse como punto de montaje.
+
+𝘀𝘂𝗱𝗼 𝗺𝗼𝘂𝗻𝘁 /𝗱𝗲𝘃/𝗻𝘃𝗺𝗲𝟬𝗻𝟮𝗽𝟭 ~/𝗘𝘀𝗰𝗿𝗶𝘁𝗼𝗿𝗶𝗼/𝗱𝗶𝘀𝗰𝗼_𝗽𝗿𝗮𝗰𝘁𝗶𝗰𝗮
+Enlaza la partición formateada a la carpeta creada en el Escritorio.
+
+Paso 4: Entre al directorio y cree un archivo llamado AdrianAlcantara.txt
+
+𝗰𝗱 ~/𝗘𝘀𝗰𝗿𝗶𝘁𝗼𝗿𝗶𝗼/𝗱𝗶𝘀𝗰𝗼_𝗽𝗿𝗮𝗰𝘁𝗶𝗰𝗮
+Cambia la ubicación de trabajo actual a la carpeta del disco montado.
+
+𝘀𝘂𝗱𝗼 𝗰𝗵𝗼𝘄𝗻 𝘃𝗮𝗹𝗲𝗻𝘁𝗶𝗻𝗮:𝘃𝗮𝗹𝗲𝗻𝘁𝗶𝗻𝗮 .
+Asigna la propiedad del directorio montado a tu usuario para otorgar permisos de escritura.
+
+𝘁𝗼𝘂𝗰𝗵 𝗔𝗱𝗿𝗶𝗮𝗻𝗔𝗹𝗰𝗮𝗻𝘁𝗮𝗿𝗮.𝘁𝘅𝘁
+Crea el archivo vacío AdrianAlcantara.txt dentro de la unidad de disco.
+
+𝗹𝘀 -𝗹
+Lista detalladamente el contenido de la carpeta para verificar que el archivo fue creado correctamente.
+
+Paso 5: Desmonte la unidad y móntela en el directorio /mnt
+
+𝗰𝗱
+Sale del punto de montaje para evitar que el sistema bloquee el proceso de desmontaje.
+
+𝘀𝘂𝗱𝗼 𝘂𝗺𝗼𝘂𝗻𝘁 /𝗱𝗲𝘃/𝗻𝘃𝗺𝗲𝟬𝗻𝟮𝗽𝟭
+Desconecta la partición del disco de la carpeta del Escritorio.
+
+𝘀𝘂𝗱𝗼 𝗺𝗼𝘂𝗻𝘁 /𝗱𝗲𝘃/𝗻𝘃𝗺𝗲𝟬𝗻𝟮𝗽𝟭 /𝗺𝗻𝘁
+Vuelve a conectar la misma partición, pero esta vez en la carpeta del sistema /mnt.
+
+Paso 6: Ingrese a /mnt y compruebe que el archivo continúa ahí
+
+𝗰𝗱 /𝗺𝗻𝘁
+Accede al nuevo punto de montaje en el directorio /mnt.
+
+𝗹𝘀 -𝗹
+Lista el contenido de /mnt confirmando que el archivo AdrianAlcantara.txt sigue guardado intacto en el disco.
+
+𝗰𝗱
+Regresa al directorio personal para finalizar la sesión de trabajo.
