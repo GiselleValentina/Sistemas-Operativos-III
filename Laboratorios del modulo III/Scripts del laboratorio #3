@@ -1,0 +1,114 @@
+𝗖𝗢𝗠𝗔𝗡𝗗𝗢𝗦 𝗨𝗦𝗔𝗗𝗢𝗦 𝗣𝗔𝗥𝗔 𝗘𝗟 𝗟𝗔𝗕𝗢𝗥𝗔𝗧𝗢𝗥𝗜𝗢 𝗗𝗘𝗟 𝗠𝗢́𝗗𝗨𝗟𝗢 𝗜𝗜𝗜
+ 
+============================================================================================================================================================================================
+𝗖𝗢𝗠𝗔𝗡𝗗𝗢𝗦 𝗨𝗦𝗔𝗗𝗢𝗦 𝗣𝗥𝗔́𝗖𝗧𝗜𝗖𝗔 𝟯.𝟭: 𝗖𝗢𝗡𝗙𝗜𝗚𝗨𝗥𝗔𝗖𝗜𝗢́𝗡 𝗗𝗘𝗟 𝗚𝗘𝗦𝗧𝗢𝗥 𝗗𝗘 𝗔𝗥𝗥𝗔𝗡𝗤𝗨𝗘 𝗚𝗥𝗨𝗕 𝗬 𝗥𝗘𝗖𝗨𝗣𝗘𝗥𝗔𝗖𝗜𝗢́𝗡 𝗗𝗘 𝗖𝗢𝗡𝗧𝗥𝗔𝗦𝗘𝗡̃𝗔 𝗘𝗡 𝗥𝗛𝗘𝗟
+ 
+Paso 1: Configurar el menú de GRUB para que el tiempo de espera sea de 20 segundos
+ 
+𝘀𝘂𝗱𝗼 𝘃𝗶 /𝗲𝘁𝗰/𝗱𝗲𝗳𝗮𝘂𝗹𝘁/𝗴𝗿𝘂𝗯
+Abre el archivo de configuración principal de GRUB en el editor de texto para modificar el valor del tiempo de espera.
+ 
+𝘀𝘂𝗱𝗼 𝗴𝗿𝘂𝗯𝟮-𝗺𝗸𝗰𝗼𝗻𝗳𝗶𝗴 -𝗼 /𝗯𝗼𝗼𝘁/𝗴𝗿𝘂𝗯𝟮/𝗴𝗿𝘂𝗯.𝗰𝗳𝗴
+Genera y actualiza el archivo de configuración definitivo de GRUB para aplicar los cambios en el sistema.
+ 
+𝗴𝗿𝗲𝗽 𝗚𝗥𝗨𝗕_𝗧𝗜𝗠𝗘𝗢𝗨𝗧 /𝗲𝘁𝗰/𝗱𝗲𝗳𝗮𝘂𝗹𝘁/𝗴𝗿𝘂𝗯
+Busca y muestra en pantalla la línea del archivo para verificar el resultado del tiempo de espera configurado.
+ 
+Paso 2: Método de recuperación si se olvida la contraseña del usuario root
+ 
+𝗺𝗼𝘂𝗻𝘁 -𝗼 𝗿𝗲𝗺𝗼𝘂𝗻𝘁,𝗿𝘄 /𝘀𝘆𝘀𝗿𝗼𝗼𝘁
+Vuelve a montar el sistema de archivos principal con permisos de lectura y escritura para poder modificar las credenciales.
+ 
+𝗰𝗵𝗿𝗼𝗼𝘁 /𝘀𝘆𝘀𝗿𝗼𝗼𝘁
+Cambia el directorio raíz de la terminal hacia el sistema operativo montado para operar directamente en él.
+ 
+𝗽𝗮𝘀𝘀𝘄𝗱 𝗿𝗼𝗼𝘁
+Permite asignar y actualizar una nueva contraseña para la cuenta del usuario administrador.
+ 
+𝘁𝗼𝘂𝗰𝗵 /.𝗮𝘂𝘁𝗼𝗿𝗲𝗹𝗮𝗯𝗲𝗹
+Crea un archivo marcador especial que obliga a SELinux a reetiquetar todo el sistema de archivos automáticamente en el siguiente reinicio.
+ 
+𝗲𝘅𝗶𝘁
+Cierra las sesiones abiertas del entorno de rescate y del modo de emergencia para permitir que la máquina continúe con su arranque normal.
+ 
+============================================================================================================================================================================================
+𝗖𝗢𝗠𝗔𝗡𝗗𝗢𝗦 𝗨𝗦𝗔𝗗𝗢𝗦 𝗣𝗥𝗔́𝗖𝗧𝗜𝗖𝗔 𝟯.𝟮: 𝗔𝗨𝗧𝗢𝗠𝗔𝗧𝗜𝗭𝗔𝗖𝗜𝗢́𝗡 𝗖𝗢𝗡 𝗦𝗖𝗥𝗜𝗣𝗧𝗦 𝗘𝗡 𝗥𝗘𝗗 𝗛𝗔𝗧 𝗘𝗡𝗧𝗘𝗥𝗣𝗥𝗜𝗦𝗘 𝗟𝗜𝗡𝗨𝗫
+ 
+Paso 1: Crear un script que haga un backup creando un comprimido utilizando TAR de la carpeta /home/valentina con la fecha y hora actual en el nombre
+ 
+𝗻𝗮𝗻𝗼 𝗯𝗮𝗰𝗸𝘂𝗽.𝘀𝗵
+Abre el editor de texto para crear y modificar el archivo del script.
+ 
+#!/𝗯𝗶𝗻/𝗯𝗮𝘀𝗵
+Línea shebang que indica el intérprete que ejecutará el script.
+ 
+𝗙𝗘𝗖𝗛𝗔=$(𝗱𝗮𝘁𝗲 +"%𝗱-%𝗺-%𝗬_%𝗛-%𝗠")
+Obtiene la fecha y hora actual del sistema mediante el comando "date" y la almacena en una variable usando sustitución de comandos con $().
+ 
+𝘁𝗮𝗿 -𝗰𝘇𝘃𝗳 /𝗵𝗼𝗺𝗲/𝘃𝗮𝗹𝗲𝗻𝘁𝗶𝗻𝗮/𝗯𝗮𝗰𝗸𝘂𝗽_$𝗙𝗘𝗖𝗛𝗔.𝘁𝗮𝗿.𝗴𝘇 /𝗵𝗼𝗺𝗲/𝘃𝗮𝗹𝗲𝗻𝘁𝗶𝗻𝗮
+Empaqueta y comprime toda la carpeta personal utilizando el formato gzip, nombrando el archivo resultante con la ruta y la variable de fecha.
+ 
+𝗰𝗵𝗺𝗼𝗱 +𝘅 𝗯𝗮𝗰𝗸𝘂𝗽.𝘀𝗵
+Otorga los permisos necesarios para que el archivo pueda ejecutarse como un programa.
+ 
+./𝗯𝗮𝗰𝗸𝘂𝗽.𝘀𝗵
+Ejecuta el script de respaldo en la terminal.
+ 
+Función general: Automatiza el proceso de compresión de la carpeta personal de la usuaria en un archivo protegido y ordenado con marca de tiempo exacta.
+ 
+Paso 2: Crear un script que copie el resultado del comando ifconfig en un archivo en el escritorio, preguntando previamente el nombre deseado
+ 
+𝘀𝘂𝗱𝗼 𝗱𝗻𝗳 𝗶𝗻𝘀𝘁𝗮𝗹𝗹 𝗻𝗲𝘁-𝘁𝗼𝗼𝗹𝘀 -𝘆
+Instala las herramientas de red necesarias en caso de que el comando ifconfig no esté disponible por defecto en el sistema.
+ 
+𝗻𝗮𝗻𝗼 𝗿𝗲𝗱_𝗶𝗻𝗳𝗼.𝘀𝗵
+Abre el editor de texto para redactar el segundo script.
+ 
+#!/𝗯𝗶𝗻/𝗯𝗮𝘀𝗵
+Define el entorno de Bash para el procesamiento del script.
+ 
+𝗿𝗲𝗮𝗱 -𝗽 "..." 𝗡𝗢𝗠𝗕𝗥𝗘
+Pausa la ejecución del script para solicitar texto por teclado a la usuaria y guardarlo en una variable.
+ 
+𝗶𝗳𝗰𝗼𝗻𝗳𝗶𝗴 > /𝗵𝗼𝗺𝗲/𝘃𝗮𝗹𝗲𝗻𝘁𝗶𝗻𝗮/𝗗𝗲𝘀𝗸𝘁𝗼𝗽/$𝗡𝗢𝗠𝗕𝗥𝗘.𝘁𝘅𝘁
+Consulta la configuración de las tarjetas de red de la máquina virtual y redirige esa información para guardarla en un archivo .txt ubicado en el Escritorio con el nombre personalizado.
+ 
+𝗰𝗵𝗺𝗼𝗱 +𝘅 𝗿𝗲𝗱_𝗶𝗻𝗳𝗼.𝘀𝗵
+Asigna permisos de ejecución al archivo.
+ 
+./𝗿𝗲𝗱_𝗶𝗻𝗳𝗼.𝘀𝗵
+Ejecuta el script interactivo.
+ 
+============================================================================================================================================================================================
+𝗖𝗢𝗠𝗔𝗡𝗗𝗢𝗦 𝗨𝗦𝗔𝗗𝗢𝗦 𝗣𝗥𝗔́𝗖𝗧𝗜𝗖𝗔 𝟯.𝟯: 𝗖𝗢𝗡𝗙𝗜𝗚𝗨𝗥𝗔𝗖𝗜𝗢́𝗡 𝗗𝗘 𝗥𝗘𝗗 𝗕𝗥𝗜𝗗𝗚𝗘 𝗬 𝗔𝗨𝗧𝗘𝗡𝗧𝗜𝗖𝗔𝗖𝗜𝗢́𝗡 𝗦𝗦𝗛 𝗖𝗢𝗡 𝗟𝗟𝗔𝗩𝗘𝗦 𝗘𝗡 𝗥𝗛𝗘𝗟
+ 
+Paso 1: Configurar la máquina virtual en modo Bridge y validar con ping
+ 
+𝗶𝗽 𝗮
+Muestra las interfaces de red activas del sistema operativo junto con sus direcciones IP y configuraciones actuales.
+ 
+𝗽𝗶𝗻𝗴 𝟭𝟵𝟮.𝟭𝟲𝟴.𝟬.𝟭𝟬𝟳
+Envía paquetes de red (ICMP) hacia la dirección IP de la máquina virtual para verificar si hay comunicación y conectividad desde Windows.
+ 
+Paso 2: Habilitar y probar el servicio SSH con usuario y contraseña
+ 
+𝘀𝘂𝗱𝗼 𝘀𝘆𝘀𝘁𝗲𝗺𝗰𝘁𝗹 𝗲𝗻𝗮𝗯𝗹𝗲 --𝗻𝗼𝘄 𝘀𝘀𝗵𝗱
+Habilita el servicio SSH para que inicie automáticamente con el sistema operativo y lo enciende de inmediato.
+ 
+𝘀𝘀𝗵 𝘃𝗮𝗹𝗲𝗻𝘁𝗶𝗻𝗮@𝟭𝟵𝟮.𝟭𝟲𝟴.𝟬.𝟭𝟬𝟳
+Abre una sesión de terminal remota segura hacia la máquina virtual utilizando el nombre de usuario y su contraseña.
+ 
+Paso 3: Generar el par de llaves en la máquina Host (Windows)
+ 
+𝘀𝘀𝗵-𝗸𝗲𝘆𝗴𝗲𝗻 -𝘁 𝗿𝘀𝗮
+Genera un par de llaves criptográficas (pública y privada) utilizando el algoritmo RSA para la autenticación segura.
+ 
+Paso 4: Copiar la llave pública generada al servidor
+ 
+𝘀𝘀𝗵-𝗰𝗼𝗽𝘆-𝗶𝗱 𝘃𝗮𝗹𝗲𝗻𝘁𝗶𝗻𝗮@𝟭𝟵𝟮.𝟭𝟲𝟴.𝟬.𝟭𝟬𝟳
+Copia automáticamente la llave pública generada en Windows al archivo de llaves autorizadas en el servidor Linux.
+ 
+Paso 5: Prueba final de conexión SSH automática
+ 
+𝘀𝘀𝗵 𝘃𝗮𝗹𝗲𝗻𝘁𝗶𝗻𝗮@𝟭𝟵𝟮.𝟭𝟲𝟴.𝟬.𝟭𝟬𝟳
+Vuelve a iniciar una sesión remota hacia el servidor Linux, autenticándose de forma automática mediante las llaves criptográficas sin solicitar contraseña.
