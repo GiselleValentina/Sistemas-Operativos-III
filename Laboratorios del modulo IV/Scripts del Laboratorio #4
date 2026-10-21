@@ -1,0 +1,136 @@
+𝗖𝗢𝗠𝗔𝗡𝗗𝗢𝗦 𝗨𝗦𝗔𝗗𝗢𝗦 𝗣𝗔𝗥𝗔 𝗘𝗟 𝗟𝗔𝗕𝗢𝗥𝗔𝗧𝗢𝗥𝗜𝗢 𝗗𝗘𝗟 𝗠𝗢́𝗗𝗨𝗟𝗢 𝗜𝗩
+ 
+============================================================================================================================================================================================
+𝗖𝗢𝗠𝗔𝗡𝗗𝗢𝗦 𝗨𝗦𝗔𝗗𝗢𝗦 𝗣𝗥𝗔́𝗖𝗧𝗜𝗖𝗔 𝟭: 𝗜𝗡𝗦𝗧𝗔𝗟𝗔𝗥 𝗨𝗡 𝗦𝗘𝗥𝗩𝗜𝗗𝗢𝗥 𝗛𝗧𝗧𝗣 𝗡𝗚𝗜𝗡𝗫
+ 
+Paso 1: Crear un website estático html con la frase "Hola Mundo"
+ 
+𝘀𝘂𝗱𝗼 𝗱𝗻𝗳 𝗶𝗻𝘀𝘁𝗮𝗹𝗹 𝗻𝗴𝗶𝗻𝘅 -𝘆
+Instala el servidor web Nginx en el sistema utilizando el administrador de paquetes DNF.
+ 
+𝘀𝘂𝗱𝗼 𝘀𝘆𝘀𝘁𝗲𝗺𝗰𝘁𝗹 𝗲𝗻𝗮𝗯𝗹𝗲 --𝗻𝗼𝘄 𝗻𝗴𝗶𝗻𝘅
+Habilita el servicio de Nginx para que inicie automáticamente con el sistema y lo pone en marcha de inmediato.
+ 
+𝘀𝘂𝗱𝗼 𝗺𝗸𝗱𝗶𝗿 -𝗽 /𝘂𝘀𝗿/𝘀𝗵𝗮𝗿𝗲/𝗻𝗴𝗶𝗻𝘅/𝗵𝘁𝗺𝗹/𝗵𝗼𝗹𝗮𝗺𝘂𝗻𝗱𝗼
+Crea un nuevo directorio para almacenar los archivos del primer sitio web estático.
+ 
+𝗲𝗰𝗵𝗼 "<𝗵𝟭>𝗛𝗼𝗹𝗮 𝗠𝘂𝗻𝗱𝗼</𝗵𝟭>" | 𝘀𝘂𝗱𝗼 𝘁𝗲𝗲 /𝘂𝘀𝗿/𝘀𝗵𝗮𝗿𝗲/𝗻𝗴𝗶𝗻𝘅/𝗵𝘁𝗺𝗹/𝗵𝗼𝗹𝗮𝗺𝘂𝗻𝗱𝗼/𝗶𝗻𝗱𝗲𝘅.𝗵𝘁𝗺𝗹
+Crea el archivo HTML principal del primer sitio web con el texto requerido utilizando un redireccionamiento.
+ 
+Paso 2: Crear un host virtual y ponerlo a escuchar por el puerto 80 y que al ingresar acceda al website anterior
+ 
+(Nota: El host virtual para el puerto 80 se configura de forma conjunta con el del puerto 8080 en el archivo de bloques de servidor).
+ 
+Paso 3: Crear un website estático html con su nombre, matrícula y nombre de la materia
+ 
+𝘀𝘂𝗱𝗼 𝗺𝗸𝗱𝗶𝗿 -𝗽 /𝘂𝘀𝗿/𝘀𝗵𝗮𝗿𝗲/𝗻𝗴𝗶𝗻𝘅/𝗵𝘁𝗺𝗹/𝗱𝗮𝘁𝗼𝘀
+Crea un nuevo directorio para almacenar los archivos del segundo sitio web estático.
+ 
+𝗲𝗰𝗵𝗼 "<𝗵𝟭>𝗚𝗶𝘀𝗲𝗹𝗹𝗲 𝗩𝗮𝗹𝗲𝗻𝘁𝗶𝗻𝗮 𝗩𝗮𝗿𝗴𝗮𝘀 - 𝗠𝗮𝘁𝗿𝗶́𝗰𝘂𝗹𝗮: [𝗧𝘂𝗠𝗮𝘁𝗿𝗶𝗰𝘂𝗹𝗮] - 𝗦𝗲𝗴𝘂𝗿𝗶𝗱𝗮𝗱 𝗜𝗻𝗳𝗼𝗿𝗺𝗮́𝘁𝗶𝗰𝗮</𝗵𝟭>" | 𝘀𝘂𝗱𝗼 𝘁𝗲𝗲 /𝘂𝘀𝗿/𝘀𝗵𝗮𝗿𝗲/𝗻𝗴𝗶𝗻𝘅/𝗵𝘁𝗺𝗹/𝗱𝗮𝘁𝗼𝘀/𝗶𝗻𝗱𝗲𝘅.𝗵𝘁𝗺𝗹
+Crea el archivo HTML para el segundo sitio web conteniendo el nombre, matrícula y materia de la estudiante.
+ 
+Paso 4: Crear un host virtual y ponerlo a escuchar por el puerto 8080 y que al ingresar acceda al website anterior
+ 
+𝘀𝘂𝗱𝗼 𝘁𝗲𝗲 /𝗲𝘁𝗰/𝗻𝗴𝗶𝗻𝘅/𝗰𝗼𝗻𝗳.𝗱/𝘃𝗵𝗼𝘀𝘁𝘀.𝗰𝗼𝗻𝗳 << '𝗘𝗢𝗙'
+Crea y configura el archivo de bloques de servidor virtuales de Nginx para gestionar ambos sitios web en los puertos 80 y 8080.
+ 
+𝘀𝘂𝗱𝗼 𝗳𝗶𝗿𝗲𝘄𝗮𝗹𝗹-𝗰𝗺𝗱 --𝗽𝗲𝗿𝗺𝗮𝗻𝗲𝗻𝘁 --𝗮𝗱𝗱-𝘀𝗲𝗿𝘃𝗶𝗰𝗲=𝗵𝘁𝘁𝗽 && 𝘀𝘂𝗱𝗼 𝗳𝗶𝗿𝗲𝘄𝗮𝗹𝗹-𝗰𝗺𝗱 --𝗽𝗲𝗿𝗺𝗮𝗻𝗲𝗻𝘁 --𝗮𝗱𝗱-𝗽𝗼𝗿𝘁=𝟴𝟬𝟴𝟬/𝘁𝗰𝗽 && 𝘀𝘂𝗱𝗼 𝗳𝗶𝗿𝗲𝘄𝗮𝗹𝗹-𝗰𝗺𝗱 --𝗿𝗲𝗹𝗼𝗮𝗱
+Configura el cortafuegos del sistema para permitir de forma permanente el tráfico entrante en los puertos 80 (HTTP) y 8080.
+ 
+𝘀𝘂𝗱𝗼 𝗿𝗲𝘀𝘁𝗼𝗿𝗲𝗰𝗼𝗻 -𝗥𝘃 /𝘂𝘀𝗿/𝘀𝗵𝗮𝗿𝗲/𝗻𝗴𝗶𝗻𝘅/𝗵𝘁𝗺𝗹/
+Restaura los contextos de seguridad SELinux predeterminados en el directorio web para que Nginx pueda acceder a los archivos.
+ 
+𝘀𝘂𝗱𝗼 𝘀𝘆𝘀𝘁𝗲𝗺𝗰𝘁𝗹 𝗿𝗲𝘀𝘁𝗮𝗿𝘁 𝗻𝗴𝗶𝗻𝘅
+Reinicia el servicio del servidor web Nginx para cargar la nueva configuración de hosts virtuales.
+ 
+============================================================================================================================================================================================
+𝗖𝗢𝗠𝗔𝗡𝗗𝗢𝗦 𝗨𝗦𝗔𝗗𝗢𝗦 𝗣𝗥𝗔́𝗖𝗧𝗜𝗖𝗔 𝟮: 𝗜𝗡𝗦𝗧𝗔𝗟𝗔𝗥 𝗨𝗡 𝗦𝗘𝗥𝗩𝗜𝗗𝗢𝗥 𝗗𝗘 𝗖𝗢𝗥𝗥𝗘𝗢𝗦
+ 
+Paso 1: Instalar un servidor SMTP postfix
+ 
+𝘀𝘂𝗱𝗼 𝘀𝘂
+Eleva los privilegios de la sesión actual para ejecutar los comandos como usuario administrador (root).
+ 
+𝗱𝗻𝗳 𝗶𝗻𝘀𝘁𝗮𝗹𝗹 𝗽𝗼𝘀𝘁𝗳𝗶𝘅 𝗰𝘆𝗿𝘂𝘀-𝘀𝗮𝘀𝗹 𝗰𝘆𝗿𝘂𝘀-𝘀𝗮𝘀𝗹-𝗽𝗹𝗮𝗶𝗻 𝘀-𝗻𝗮𝗶𝗹 𝗻𝗮𝗻𝗼 -𝘆
+Instala el servidor SMTP Postfix, las librerías de autenticación SASL para Gmail, el cliente de correo y el editor Nano.
+ 
+𝗻𝗮𝗻𝗼 /𝗲𝘁𝗰/𝗽𝗼𝘀𝘁𝗳𝗶𝘅/𝗺𝗮𝗶𝗻.𝗰𝗳
+Abre el archivo principal de configuración de Postfix para añadir los parámetros de red y retransmisión por Gmail.
+ 
+𝗻𝗮𝗻𝗼 /𝗲𝘁𝗰/𝗽𝗼𝘀𝘁𝗳𝗶𝘅/𝘀𝗮𝘀𝗹_𝗽𝗮𝘀𝘀𝘄𝗱
+Abre el archivo de contraseñas para guardar las credenciales de la cuenta remitente.
+ 
+𝗰𝗵𝗼𝘄𝗻 𝗿𝗼𝗼𝘁:𝗿𝗼𝗼𝘁 /𝗲𝘁𝗰/𝗽𝗼𝘀𝘁𝗳𝗶𝘅/𝘀𝗮𝘀𝗹_𝗽𝗮𝘀𝘀𝘄𝗱
+Asigna la propiedad exclusiva del archivo de credenciales al usuario root.
+ 
+𝗰𝗵𝗺𝗼𝗱 𝟲𝟬𝟬 /𝗲𝘁𝗰/𝗽𝗼𝘀𝘁𝗳𝗶𝘅/𝘀𝗮𝘀𝗹_𝗽𝗮𝘀𝘀𝘄𝗱
+Restringe los permisos del archivo para que únicamente el usuario root pueda leerlo y modificarlo.
+ 
+𝗽𝗼𝘀𝘁𝗺𝗮𝗽 𝗹𝗺𝗱𝗯:/𝗲𝘁𝗰/𝗽𝗼𝘀𝘁𝗳𝗶𝘅/𝘀𝗮𝘀𝗹_𝗽𝗮𝘀𝘀𝘄𝗱
+Compila el archivo de credenciales en una base de datos indexada "lmdb" para que Postfix la lea velozmente.
+ 
+𝗰𝗵𝗼𝘄𝗻 𝗿𝗼𝗼𝘁:𝗿𝗼𝗼𝘁 /𝗲𝘁𝗰/𝗽𝗼𝘀𝘁𝗳𝗶𝘅/𝘀𝗮𝘀𝗹_𝗽𝗮𝘀𝘀𝘄𝗱.𝗹𝗺𝗱𝗯
+Asigna la propiedad de la base de datos compilada al usuario root.
+ 
+𝗰𝗵𝗺𝗼𝗱 𝟲𝟬𝟬 /𝗲𝘁𝗰/𝗽𝗼𝘀𝘁𝗳𝗶𝘅/𝘀𝗮𝘀𝗹_𝗽𝗮𝘀𝘀𝘄𝗱.𝗹𝗺𝗱𝗯
+Establece permisos de lectura y escritura exclusivos para root en la base de datos compilada.
+ 
+𝗽𝗼𝘀𝘁𝗳𝗶𝘅 𝗰𝗵𝗲𝗰𝗸
+Verifica la sintaxis general de los archivos de configuración para confirmar que no contengan errores.
+ 
+𝘀𝘆𝘀𝘁𝗲𝗺𝗰𝘁𝗹 𝗲𝗻𝗮𝗯𝗹𝗲 --𝗻𝗼𝘄 𝗽𝗼𝘀𝘁𝗳𝗶𝘅
+Habilita el servicio Postfix para que inicie automáticamente y lo arranca de inmediato en el sistema.
+ 
+𝘀𝘆𝘀𝘁𝗲𝗺𝗰𝘁𝗹 𝘀𝘁𝗮𝘁𝘂𝘀 𝗽𝗼𝘀𝘁𝗳𝗶𝘅
+Muestra el estado operativo de Postfix confirmando que el servicio está activo y corriendo.
+ 
+Paso 2: Enviar un correo de ejemplo al correo del maestro "os3conadrian@gmail.com" con el asunto "MambruSeFueALaGuerra" y en el cuerpo su nombre y matrícula
+ 
+𝗽𝗿𝗶𝗻𝘁𝗳 '𝗡𝗼𝗺𝗯𝗿𝗲: 𝗚𝗶𝘀𝗲𝗹𝗹𝗲 𝗩𝗮𝗹𝗲𝗻𝘁𝗶𝗻𝗮 𝗩𝗮𝗿𝗴𝗮𝘀 𝗥𝗼𝗮\𝗻𝗠𝗮𝘁𝗿𝗶𝗰𝘂𝗹𝗮: 𝟮𝟬𝟮𝟲𝟬𝟰𝟰𝟱\𝗻' | 𝗺𝗮𝗶𝗹𝘅 -𝗿 𝗴𝗶𝘀𝗲𝗹𝗹𝗲𝘃𝗮𝗹𝗲𝗻𝘁𝗶𝗻𝗮𝟬𝟳.𝟬𝟱@𝗴𝗺𝗮𝗶𝗹.𝗰𝗼𝗺 -𝘀 "𝗠𝗮𝗺𝗯𝗿𝘂𝗦𝗲𝗙𝘂𝗲𝗔𝗹𝗮𝗚𝘂𝗲𝗿𝗿𝗮" 𝗼𝘀𝟯𝗰𝗼𝗻𝗮𝗱𝗿𝗶𝗮𝗻@𝗴𝗺𝗮𝗶𝗹.𝗰𝗼𝗺
+Envía el correo requerido al profesor con el asunto solicitado y tu información en el cuerpo, utilizando tu cuenta autenticada de Gmail.
+ 
+𝗺𝗮𝗶𝗹𝗾
+Consulta la cola de mensajes salientes de Postfix para verificar que el correo se envió y fue procesado correctamente hacia el servidor externo.
+ 
+============================================================================================================================================================================================
+𝗖𝗢𝗠𝗔𝗡𝗗𝗢𝗦 𝗨𝗦𝗔𝗗𝗢𝗦 𝗣𝗥𝗔́𝗖𝗧𝗜𝗖𝗔 𝟯: 𝗜𝗡𝗦𝗧𝗔𝗟𝗔𝗥 𝗨𝗡 𝗦𝗘𝗥𝗩𝗜𝗗𝗢𝗥 𝗗𝗘 𝗜𝗠𝗣𝗥𝗘𝗦𝗜𝗢́𝗡
+ 
+Paso 1: Instalar el servicio del servidor de impresión CUPS
+ 
+𝘀𝘂𝗱𝗼 𝗱𝗻𝗳 𝗶𝗻𝘀𝘁𝗮𝗹𝗹 𝗰𝘂𝗽𝘀 -𝘆
+Instala el paquete del servidor de impresión CUPS y sus dependencias automáticamente.
+ 
+Paso 2: Iniciar y habilitar el servicio de CUPS
+ 
+𝘀𝘂𝗱𝗼 𝘀𝘆𝘀𝘁𝗲𝗺𝗰𝘁𝗹 𝗲𝗻𝗮𝗯𝗹𝗲 --𝗻𝗼𝘄 𝗰𝘂𝗽𝘀
+Inicia el servicio de CUPS de inmediato y lo configura para que arranque automáticamente al encender el sistema.
+ 
+Paso 3: Permitir el protocolo de impresión en el cortafuegos
+ 
+𝘀𝘂𝗱𝗼 𝗳𝗶𝗿𝗲𝘄𝗮𝗹𝗹-𝗰𝗺𝗱 --𝗽𝗲𝗿𝗺𝗮𝗻𝗲𝗻𝘁 --𝗮𝗱𝗱-𝘀𝗲𝗿𝘃𝗶𝗰𝗲=𝗶𝗽𝗽-𝗰𝗹𝗶𝗲𝗻𝘁
+Abre de forma permanente el puerto correspondiente en el cortafuegos para permitir el tráfico de impresión en red.
+ 
+Paso 4: Recargar la configuración del cortafuegos
+ 
+𝘀𝘂𝗱𝗼 𝗳𝗶𝗿𝗲𝘄𝗮𝗹𝗹-𝗰𝗺𝗱 --𝗿𝗲𝗹𝗼𝗮𝗱
+Aplica de inmediato los cambios realizados en el cortafuegos sin interrumpir el sistema.
+ 
+Paso 5: Instalar el soporte para la impresora virtual PDF
+ 
+𝘀𝘂𝗱𝗼 𝗱𝗻𝗳 𝗶𝗻𝘀𝘁𝗮𝗹𝗹 𝗰𝘂𝗽𝘀-𝗽𝗱𝗳 -𝘆
+Instala el módulo complementario que permite a CUPS generar archivos PDF como si fuera una impresora física.
+ 
+Paso 6: Reiniciar el servicio de CUPS para cargar la impresora PDF
+ 
+𝘀𝘂𝗱𝗼 𝘀𝘆𝘀𝘁𝗲𝗺𝗰𝘁𝗹 𝗿𝗲𝘀𝘁𝗮𝗿𝘁 𝗰𝘂𝗽𝘀
+Reinicia el servicio de impresión CUPS para que cargue y reconozca la nueva impresora virtual PDF.
+ 
+Paso 7: Configurar la impresora virtual en la interfaz web
+ 
+Acceder a 𝗵𝘁𝘁𝗽𝘀://𝟭𝟵𝟮.𝟭𝟲𝟴.𝟮𝟰𝟯.𝟭𝟯𝟭:𝟲𝟯𝟭 desde el navegador de la máquina virtual, ir a Administration, hacer clic en Add Printer, autenticarse con el usuario del sistema, seleccionar CUPS-PDF y finalizar la adición de la impresora.
+Permite registrar y configurar la impresora virtual mediante la interfaz web de administración de CUPS.
+ 
+Paso 8: Agregar la impresora en la PC cliente y realizar la prueba
+ 
+𝗵𝘁𝘁𝗽://𝟭𝟵𝟮.𝟭𝟲𝟴.𝟮𝟰𝟯.𝟭𝟯𝟭:𝟲𝟯𝟭/𝗽𝗿𝗶𝗻𝘁𝗲𝗿𝘀/𝗖𝗨𝗣𝗦-𝗣𝗗𝗙
+Conecta la computadora cliente con el servidor mediante la ruta de red IPP para enviar documentos y generar automáticamente el archivo PDF resultante en el servidor Linux.
