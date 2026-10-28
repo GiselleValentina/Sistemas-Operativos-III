@@ -1,1 +1,234 @@
-k
+𝗖𝗢𝗠𝗔𝗡𝗗𝗢𝗦 𝗨𝗦𝗔𝗗𝗢𝗦 𝗣𝗔𝗥𝗔 𝗘𝗟 𝗟𝗔𝗕𝗢𝗥𝗔𝗧𝗢𝗥𝗜𝗢 𝗗𝗘𝗟 𝗠𝗢́𝗗𝗨𝗟𝗢 𝗩
+
+============================================================================================================================================================================================
+𝗖𝗢𝗠𝗔𝗡𝗗𝗢𝗦 𝗨𝗦𝗔𝗗𝗢𝗦 𝗣𝗥𝗔́𝗖𝗧𝗜𝗖𝗔 𝟭: 𝗦𝗜𝗡𝗖𝗥𝗢𝗡𝗜𝗭𝗔𝗖𝗜𝗢́𝗡 𝗗𝗘 𝗖𝗔𝗥𝗣𝗘𝗧𝗔𝗦 𝗖𝗢𝗡 𝗥𝗦𝗬𝗡𝗖
+
+Paso 1: Crear una carpeta en su servidor primario y dentro crear 100 archivos
+
+𝗺𝗸𝗱𝗶𝗿 -𝗽 /𝗵𝗼𝗺𝗲/𝘃𝗮𝗹𝗲𝗻𝘁𝗶𝗻𝗮/𝗼𝗿𝗶𝗴𝗲𝗻
+Crea la carpeta de origen dentro del directorio personal en el servidor primario.
+
+𝘁𝗼𝘂𝗰𝗵 /𝗵𝗼𝗺𝗲/𝘃𝗮𝗹𝗲𝗻𝘁𝗶𝗻𝗮/𝗼𝗿𝗶𝗴𝗲𝗻/𝗮𝗿𝗰𝗵𝗶𝘃𝗼_{𝟭..𝟭𝟬𝟬}.𝘁𝘅𝘁
+Genera 100 archivos vacíos enumerados dentro de la carpeta de origen.
+
+𝗹𝘀 -𝗹 /𝗵𝗼𝗺𝗲/𝘃𝗮𝗹𝗲𝗻𝘁𝗶𝗻𝗮/𝗼𝗿𝗶𝗴𝗲𝗻/
+Lista el contenido de la carpeta de origen para verificar la creación exitosa de los 100 archivos.
+
+Paso 2: Utilizando rsync, copiar el contenido de la carpeta al servidor remoto
+
+𝗺𝗸𝗱𝗶𝗿 -𝗽 /𝗵𝗼𝗺𝗲/𝘃𝗮𝗹𝗲𝗻𝘁𝗶𝗻𝗮/𝗱𝗲𝘀𝘁𝗶𝗻𝗼
+(Ejecutado en Servidor Secundario) Crea la carpeta de destino receptora en el servidor remoto.
+
+𝘀𝘀𝗵-𝗸𝗲𝘆𝗴𝗲𝗻 -𝘁 𝗿𝘀𝗮 -𝗯 𝟮𝟬𝟰𝟴
+Genera el par de claves SSH en el servidor primario.
+
+𝘀𝘀𝗵-𝗰𝗼𝗽𝘆-𝗶𝗱 𝘃𝗮𝗹𝗲𝗻𝘁𝗶𝗻𝗮@𝟭𝟬.𝟬.𝟬.𝟭𝟱𝟱
+Copia la clave pública SSH al servidor secundario para permitir conexiones automáticas sin contraseña.
+
+𝗿𝘀𝘆𝗻𝗰 -𝗮𝘃𝘇 /𝗵𝗼𝗺𝗲/𝘃𝗮𝗹𝗲𝗻𝘁𝗶𝗻𝗮/𝗼𝗿𝗶𝗴𝗲𝗻/ 𝘃𝗮𝗹𝗲𝗻𝘁𝗶𝗻𝗮@𝟭𝟬.𝟬.𝟬.𝟭𝟱𝟱:/𝗵𝗼𝗺𝗲/𝘃𝗮𝗹𝗲𝗻𝘁𝗶𝗻𝗮/𝗱𝗲𝘀𝘁𝗶𝗻𝗼/
+Transfiere y sincroniza manualmente los archivos de la carpeta de origen a la carpeta remota de destino.
+
+Paso 3: Crear un script con el comando de sincronización de la carpeta y luego crear un crontab para que se sincronicen cada 1 minuto
+
+𝗲𝗰𝗵𝗼 -𝗲 '#!/𝗯𝗶𝗻/𝗯𝗮𝘀𝗵\𝗻𝗿𝘀𝘆𝗻𝗰 -𝗮𝘃𝘇 /𝗵𝗼𝗺𝗲/𝘃𝗮𝗹𝗲𝗻𝘁𝗶𝗻𝗮/𝗼𝗿𝗶𝗴𝗲𝗻/ 𝘃𝗮𝗹𝗲𝗻𝘁𝗶𝗻𝗮@𝟭𝟬.𝟬.𝟬.𝟭𝟱𝟱:/𝗵𝗼𝗺𝗲/𝘃𝗮𝗹𝗲𝗻𝘁𝗶𝗻𝗮/𝗱𝗲𝘀𝘁𝗶𝗻𝗼/' | 𝘀𝘂𝗱𝗼 𝘁𝗲𝗲 /𝘂𝘀𝗿/𝗹𝗼𝗰𝗮𝗹/𝗯𝗶𝗻/𝘀𝘆𝗻𝗰_𝘀𝗰𝗿𝗶𝗽𝘁.𝘀𝗵 > /𝗱𝗲𝘃/𝗻𝘂𝗹𝗹
+Crea de forma segura el archivo ejecutable del script con la orden de sincronización en una ruta global del sistema.
+
+𝘀𝘂𝗱𝗼 𝗰𝗵𝗺𝗼𝗱 +𝘅 /𝘂𝘀𝗿/𝗹𝗼𝗰𝗮𝗹/𝗯𝗶𝗻/𝘀𝘆𝗻𝗰_𝘀𝗰𝗿𝗶𝗽𝘁.𝘀𝗵
+Otorga permisos de ejecución al script creado.
+
+𝗰𝗿𝗼𝗻𝘁𝗮𝗯 -𝗲
+Abre el editor del administrador de tareas programadas del sistema.
+
+Línea agregada dentro de crontab: * * * * * /𝘂𝘀𝗿/𝗹𝗼𝗰𝗮𝗹/𝗯𝗶𝗻/𝘀𝘆𝗻𝗰_𝘀𝗰𝗿𝗶𝗽𝘁.𝘀𝗵
+Programa la ejecución automática del script cada 1 minuto de forma continua.
+
+Paso 4: Crear un archivo en el server primario y comprobar que el crontab está funcionando validando en el servidor secundario
+
+𝘁𝗼𝘂𝗰𝗵 /𝗵𝗼𝗺𝗲/𝘃𝗮𝗹𝗲𝗻𝘁𝗶𝗻𝗮/𝗼𝗿𝗶𝗴𝗲𝗻/𝗽𝗿𝘂𝗲𝗯𝗮_𝗰𝗿𝗼𝗻.𝘁𝘅𝘁
+(Ejecutado en Servidor Primario) Crea un nuevo archivo de prueba para comprobar la sincronización automática del cron.
+
+𝗹𝘀 -𝗹 /𝗵𝗼𝗺𝗲/𝘃𝗮𝗹𝗲𝗻𝘁𝗶𝗻𝗮/𝗱𝗲𝘀𝘁𝗶𝗻𝗼/
+(Ejecutado en Servidor Secundario) Muestra el contenido de la carpeta de destino para validar que los archivos y el nuevo documento de prueba fueron recibidos automáticamente.
+
+============================================================================================================================================================================================
+𝗖𝗢𝗠𝗔𝗡𝗗𝗢𝗦 𝗨𝗦𝗔𝗗𝗢𝗦 𝗣𝗥𝗔́𝗖𝗧𝗜𝗖𝗔 𝟮: 𝗜𝗡𝗦𝗧𝗔𝗟𝗔𝗖𝗜𝗢́𝗡 𝗬 𝗖𝗢𝗡𝗙𝗜𝗚𝗨𝗥𝗔𝗖𝗜𝗢́𝗡 𝗗𝗘𝗟 𝗖𝗟𝗨́𝗦𝗧𝗘𝗥
+
+Paso 1: Mapear los nombres de los nodos
+
+𝘀𝘂𝗱𝗼 𝗯𝗮𝘀𝗵 -𝗰 '𝗲𝗰𝗵𝗼 -𝗲 "𝟭𝟬.𝟬.𝟬.𝟭𝟱𝟲 𝗻𝗼𝗱𝗲𝟭\𝗻𝟭𝟬.𝟬.𝟬.𝟭𝟱𝟰 𝗻𝗼𝗱𝗲𝟮" >> /𝗲𝘁𝗰/𝗵𝗼𝘀𝘁𝘀'
+Asocia las direcciones IP locales con los nombres de cada servidor para que se reconozcan fácilmente en la red.
+
+Paso 2: Habilitar el repositorio de Alta Disponibilidad
+
+𝘀𝘂𝗱𝗼 𝗱𝗻𝗳 𝗰𝗼𝗻𝗳𝗶𝗴-𝗺𝗮𝗻𝗮𝗴𝗲𝗿 --𝘀𝗲𝘁-𝗲𝗻𝗮𝗯𝗹𝗲𝗱 𝗿𝗵𝗲𝗹-𝟭𝟬-𝗳𝗼𝗿-𝘅𝟴𝟲_𝟲𝟰-𝗵𝗶𝗴𝗵𝗮𝘃𝗮𝗶𝗹𝗮𝗯𝗶𝗹𝗶𝘁𝘆-𝗿𝗽𝗺𝘀
+Activa la fuente oficial de paquetes de alta disponibilidad de Red Hat en el sistema.
+
+Paso 3: Instalar los paquetes del clúster
+
+𝘀𝘂𝗱𝗼 𝗱𝗻𝗳 𝗶𝗻𝘀𝘁𝗮𝗹𝗹 -𝘆 𝗽𝗮𝗰𝗲𝗺𝗮𝗸𝗲𝗿 𝗰𝗼𝗿𝗼𝘀𝘆𝗻𝗰 𝗽𝗰𝘀 𝗽𝗰𝘀-𝘀𝗻𝗺𝗽
+Descarga e instala los programas clave del clúster (Pacemaker, Corosync y la consola de gestión pcs).
+
+Paso 4: Encender el servicio de gestión pcsd
+
+𝘀𝘂𝗱𝗼 𝘀𝘆𝘀𝘁𝗲𝗺𝗰𝘁𝗹 𝗲𝗻𝗮𝗯𝗹𝗲 --𝗻𝗼𝘄 𝗽𝗰𝘀𝗱
+Activa el servicio encargado de sincronizar la configuración del clúster y lo programa para iniciar automáticamente con el sistema.
+
+Paso 5: Crear la contraseña del usuario del clúster
+
+𝘀𝘂𝗱𝗼 𝗽𝗮𝘀𝘀𝘄𝗱 𝗵𝗮𝗰𝗹𝘂𝘀𝘁𝗲𝗿
+Asigna la clave de seguridad requerida para que los servidores se autentiquen entre sí de forma segura.
+
+Paso 6: Autenticar la comunicación entre nodos
+
+𝘀𝘂𝗱𝗼 𝗽𝗰𝘀 𝗵𝗼𝘀𝘁 𝗮𝘂𝘁𝗵 𝗻𝗼𝗱𝗲𝟭 𝗻𝗼𝗱𝗲𝟮 -𝘂 𝗵𝗮𝗰𝗹𝘂𝘀𝘁𝗲𝗿
+Valida la relación de confianza entre ambos servidores utilizando las credenciales del usuario interno del clúster.
+
+Paso 7: Crear e iniciar el clúster
+
+𝘀𝘂𝗱𝗼 𝗽𝗰𝘀 𝗰𝗹𝘂𝘀𝘁𝗲𝗿 𝘀𝗲𝘁𝘂𝗽 𝗺𝘆𝗰𝗹𝘂𝘀𝘁𝗲𝗿 𝗻𝗼𝗱𝗲𝟭 𝗻𝗼𝗱𝗲𝟮 --𝘀𝘁𝗮𝗿𝘁
+Agrupa oficialmente los dos servidores bajo un mismo clúster (mycluster) y enciende sus servicios.
+
+Paso 8: Habilitar inicio automático del clúster en ambos nodos
+
+𝘀𝘂𝗱𝗼 𝗽𝗰𝘀 𝗰𝗹𝘂𝘀𝘁𝗲𝗿 𝗲𝗻𝗮𝗯𝗹𝗲 --𝗮𝗹𝗹
+Garantiza que el clúster vuelva a encenderse automáticamente de forma permanente si las máquinas virtuales se reinician.
+
+Paso 9: Desactivar el aislamiento de nodos (STONITH)
+
+𝘀𝘂𝗱𝗼 𝗽𝗰𝘀 𝗽𝗿𝗼𝗽𝗲𝗿𝘁𝘆 𝘀𝗲𝘁 𝘀𝘁𝗼𝗻𝗶𝘁𝗵-𝗲𝗻𝗮𝗯𝗹𝗲𝗱=𝗳𝗮𝗹𝘀𝗲
+Desactiva la función de apagado de seguridad automático para permitir que el clúster opere sin problemas en entornos de prueba o laboratorios virtuales.
+
+Paso 10: Crear el recurso de IP flotante
+
+𝘀𝘂𝗱𝗼 𝗽𝗰𝘀 𝗿𝗲𝘀𝗼𝘂𝗿𝗰𝗲 𝗰𝗿𝗲𝗮𝘁𝗲 𝗩𝗶𝗿𝘁𝘂𝗮𝗹𝗜𝗣 𝗼𝗰𝗳:𝗵𝗲𝗮𝗿𝘁𝗯𝗲𝗮𝘁:𝗜𝗣𝗮𝗱𝗱𝗿𝟮 𝗶𝗽=𝟭𝟬.𝟬.𝟬.𝟮𝟬𝟬 𝗰𝗶𝗱𝗿_𝗻𝗲𝘁𝗺𝗮𝘀𝗸=𝟮𝟰 𝗼𝗽 𝗺𝗼𝗻𝗶𝘁𝗼𝗿 𝗶𝗻𝘁𝗲𝗿𝘃𝗮𝗹=𝟭𝟬𝘀
+Configura la dirección IP compartida (10.0.0.200) que se desplazará automáticamente de un nodo a otro si el servidor activo falla.
+
+Paso 11: Verificar el estado del clúster y realizar la prueba de ping
+
+𝘀𝘂𝗱𝗼 𝗽𝗰𝘀 𝘀𝘁𝗮𝘁𝘂𝘀
+Muestra el informe del estado operativo actual, confirmando que los nodos están en línea y el recurso de la IP flotante se encuentra activo.
+
+𝗽𝗶𝗻𝗴 𝟭𝟬.𝟬.𝟬.𝟮𝟬𝟬 -𝘁
+(Ejecutado desde la terminal de Windows) Realiza un envío continuo de paquetes hacia la IP flotante para comprobar que la conexión se mantiene estable mientras se alternan los reinicios entre los servidores.
+
+============================================================================================================================================================================================
+𝗖𝗢𝗠𝗔𝗡𝗗𝗢𝗦 𝗨𝗦𝗔𝗗𝗢𝗦 𝗣𝗥𝗔́𝗖𝗧𝗜𝗖𝗔 𝟯: 𝗖𝗟𝗨́𝗦𝗧𝗘𝗥 𝗗𝗘 𝗔𝗟𝗧𝗔 𝗗𝗜𝗦𝗣𝗢𝗡𝗜𝗕𝗜𝗟𝗜𝗗𝗔𝗗 𝗛𝗧𝗧𝗣
+
+Paso 1: Instalar el servidor web Apache
+
+𝘀𝘂𝗱𝗼 𝗱𝗻𝗳 𝗶𝗻𝘀𝘁𝗮𝗹𝗹 𝗵𝘁𝘁𝗽𝗱 -𝘆
+(Ambos servidores) Instala el servidor web Apache en el sistema de manera automatizada.
+
+Paso 2: Habilitar e iniciar el servicio Apache
+
+𝘀𝘂𝗱𝗼 𝘀𝘆𝘀𝘁𝗲𝗺𝗰𝘁𝗹 𝗲𝗻𝗮𝗯𝗹𝗲 --𝗻𝗼𝘄 𝗵𝘁𝘁𝗽𝗱
+(Ambos servidores) Configura Apache para que arranque automáticamente con el sistema y lo pone en marcha de inmediato.
+
+Paso 3: Crear la página HTML personalizada
+
+𝗲𝗰𝗵𝗼 "<𝗵𝟭>𝗦𝗲𝗿𝘃𝗶𝗱𝗼𝗿 𝟭 (𝗦𝗲𝗿𝘃𝗲𝗿 𝟭)</𝗵𝟭>" | 𝘀𝘂𝗱𝗼 𝘁𝗲𝗲 /𝘃𝗮𝗿/𝘄𝘄𝘄/𝗵𝘁𝗺𝗹/𝗶𝗻𝗱𝗲𝘅.𝗵𝘁𝗺𝗹
+(Servidor 1 - IP: 10.0.0.156) Sobrescribe el archivo principal del sitio web con un texto que identifica claramente al Servidor 1.
+
+𝗲𝗰𝗵𝗼 "<𝗵𝟭>𝗦𝗲𝗿𝘃𝗶𝗱𝗼𝗿 𝟮 (𝗦𝗲𝗿𝘃𝗲𝗿 𝟮)</𝗵𝟭>" | 𝘀𝘂𝗱𝗼 𝘁𝗲𝗲 /𝘃𝗮𝗿/𝘄𝘄𝘄/𝗵𝘁𝗺𝗹/𝗶𝗻𝗱𝗲𝘅.𝗵𝘁𝗺𝗹
+(Servidor 2 - IP: 10.0.0.154) Sobrescribe el archivo principal del sitio web con un texto que identifica claramente al Servidor 2.
+
+Paso 4: Instalar Keepalived (con soporte del repositorio EPEL)
+
+(Teoría: Keepalived implementa el protocolo VRRP para gestionar una IP virtual compartida y lograr alta disponibilidad).
+
+𝘀𝘂𝗱𝗼 𝗱𝗻𝗳 𝗶𝗻𝘀𝘁𝗮𝗹𝗹 𝗸𝗲𝗲𝗽𝗮𝗹𝗶𝘃𝗲𝗱 --𝗲𝗻𝗮𝗯𝗹𝗲𝗿𝗲𝗽𝗼=𝗲𝗽𝗲𝗹 -𝘆
+(Servidor 1) Instala el software Keepalived habilitando el repositorio EPEL para gestionar la IP flotante.
+
+𝘀𝘂𝗱𝗼 𝗱𝗻𝗳 𝗶𝗻𝘀𝘁𝗮𝗹𝗹 -𝘆 𝗵𝘁𝘁𝗽𝘀://𝗱𝗹.𝗳𝗲𝗱𝗼𝗿𝗮𝗽𝗿𝗼𝗷𝗲𝗰𝘁.𝗼𝗿𝗴/𝗽𝘂𝗯/𝗲𝗽𝗲𝗹/𝗲𝗽𝗲𝗹-𝗿𝗲𝗹𝗲𝗮𝘀𝗲-𝗹𝗮𝘁𝗲𝘀𝘁-𝟭𝟬.𝗻𝗼𝗮𝗿𝗰𝗵.𝗿𝗽𝗺
+(Servidor 2) Instala primero el repositorio EPEL en el segundo servidor.
+
+𝘀𝘂𝗱𝗼 𝗱𝗻𝗳 𝗶𝗻𝘀𝘁𝗮𝗹𝗹 𝗸𝗲𝗲𝗽𝗮𝗹𝗶𝘃𝗲𝗱 --𝗲𝗻𝗮𝗯𝗹𝗲𝗿𝗲𝗽𝗼=𝗲𝗽𝗲𝗹 -𝘆
+(Servidor 2) Instala el software Keepalived habilitando el repositorio EPEL para gestionar la IP flotante.
+
+Paso 5: Configurar Keepalived
+
+(Explicación del bloque: Define una instancia VRRP donde se establece el rol del nodo (MASTER o BACKUP), la interfaz de red, el identificador del clúster, la prioridad de liderazgo, los parámetros de autenticación, las IPs de comunicación entre nodos y la IP virtual flotante compartida).
+
+𝘀𝘂𝗱𝗼 𝗻𝗮𝗻𝗼 /𝗲𝘁𝗰/𝗸𝗲𝗲𝗽𝗮𝗹𝗶𝘃𝗲𝗱/𝗸𝗲𝗲𝗽𝗮𝗹𝗶𝘃𝗲𝗱.𝗰𝗼𝗻𝗳
+(Servidor 1) Abre el archivo de configuración para pegar el siguiente contenido como MASTER:
+
+𝘃𝗿𝗿𝗽_𝗶𝗻𝘀𝘁𝗮𝗻𝗰𝗲 𝗩𝗜_𝟭 {
+    𝘀𝘁𝗮𝘁𝗲 𝗠𝗔𝗦𝗧𝗘𝗥
+    𝗶𝗻𝘁𝗲𝗿𝗳𝗮𝗰𝗲 𝗲𝗻𝘀𝟭𝟲𝟬
+    𝘃𝗶𝗿𝘁𝘂𝗮𝗹_𝗿𝗼𝘂𝘁𝗲𝗿_𝗶𝗱 𝟱𝟭
+    𝗽𝗿𝗶𝗼𝗿𝗶𝘁𝘆 𝟭𝟬𝟭
+    𝗮𝗱𝘃𝗲𝗿𝘁_𝗶𝗻𝘁 𝟭
+    𝗮𝘂𝘁𝗵𝗲𝗻𝘁𝗶𝗰𝗮𝘁𝗶𝗼𝗻 {
+        𝗮𝘂𝘁𝗵_𝘁𝘆𝗽𝗲 𝗣𝗔𝗦𝗦
+        𝗮𝘂𝘁𝗵_𝗽𝗮𝘀𝘀 𝟭𝟮𝟯𝟰𝟱
+    }
+    𝘂𝗻𝗶𝗰𝗮𝘀𝘁_𝘀𝗿𝗰_𝗶𝗽 𝟭𝟬.𝟬.𝟬.𝟭𝟱𝟲
+    𝘂𝗻𝗶𝗰𝗮𝘀𝘁_𝗽𝗲𝗲𝗿 {
+        𝟭𝟬.𝟬.𝟬.𝟭𝟱𝟰
+    }
+    𝘃𝗶𝗿𝘁𝘂𝗮𝗹_𝗶𝗽𝗮𝗱𝗱𝗿𝗲𝘀𝘀 {
+        𝟭𝟬.𝟬.𝟬.𝟭𝟬𝟬/𝟮𝟰
+    }
+}
+
+𝘀𝘂𝗱𝗼 𝗻𝗮𝗻𝗼 /𝗲𝘁𝗰/𝗸𝗲𝗲𝗽𝗮𝗹𝗶𝘃𝗲𝗱/𝗸𝗲𝗲𝗽𝗮𝗹𝗶𝘃𝗲𝗱.𝗰𝗼𝗻𝗳
+(Servidor 2) Abre el archivo de configuración para pegar el siguiente contenido como BACKUP:
+
+𝘃𝗿𝗿𝗽_𝗶𝗻𝘀𝘁𝗮𝗻𝗰𝗲 𝗩𝗜_𝟭 {
+    𝘀𝘁𝗮𝘁𝗲 𝗕𝗔𝗖𝗞𝗨𝗣
+    𝗶𝗻𝘁𝗲𝗿𝗳𝗮𝗰𝗲 𝗲𝗻𝘀𝟭𝟲𝟬
+    𝘃𝗶𝗿𝘁𝘂𝗮𝗹_𝗿𝗼𝘂𝘁𝗲𝗿_𝗶𝗱 𝟱𝟭
+    𝗽𝗿𝗶𝗼𝗿𝗶𝘁𝘆 𝟭𝟬𝟬
+    𝗮𝗱𝘃𝗲𝗿𝘁_𝗶𝗻𝘁 𝟭
+    𝗮𝘂𝘁𝗵𝗲𝗻𝘁𝗶𝗰𝗮𝘁𝗶𝗼𝗻 {
+        𝗮𝘂𝘁𝗵_𝘁𝘆𝗽𝗲 𝗣𝗔𝗦𝗦
+        𝗮𝘂𝘁𝗵_𝗽𝗮𝘀𝘀 𝟭𝟮𝟯𝟰𝟱
+    }
+    𝘂𝗻𝗶𝗰𝗮𝘀𝘁_𝘀𝗿𝗰_𝗶𝗽 𝟭𝟬.𝟬.𝟬.𝟭𝟱𝟰
+    𝘂𝗻𝗶𝗰𝗮𝘀𝘁_𝗽𝗲𝗲𝗿 {
+        𝟭𝟬.𝟬.𝟬.𝟭𝟱𝟲
+    }
+    𝘃𝗶𝗿𝘁𝘂𝗮𝗹_𝗶𝗽𝗮𝗱𝗱𝗿𝗲𝘀𝘀 {
+        𝟭𝟬.𝟬.𝟬.𝟭𝟬𝟬/𝟮𝟰
+    }
+}
+
+Paso 6: Configurar el cortafuegos para HTTP y VRRP
+
+𝘀𝘂𝗱𝗼 𝗳𝗶𝗿𝗲𝘄𝗮𝗹𝗹-𝗰𝗺𝗱 --𝗽𝗲𝗿𝗺𝗮𝗻𝗲𝗻𝘁 --𝗮𝗱𝗱-𝘀𝗲𝗿𝘃𝗶𝗰𝗲=𝗵𝘁𝘁𝗽
+(Ambos servidores) Permite de forma permanente el tráfico web (puerto 80) en el cortafuegos.
+
+𝘀𝘂𝗱𝗼 𝗳𝗶𝗿𝗲𝘄𝗮𝗹𝗹-𝗰𝗺𝗱 --𝗽𝗲𝗿𝗺𝗮𝗻𝗲𝗻𝘁 --𝗮𝗱𝗱-𝗽𝗿𝗼𝘁𝗼𝗰𝗼𝗹=𝘃𝗿𝗿𝗽
+(Ambos servidores) Permite de forma permanente el protocolo de alta disponibilidad VRRP utilizado por Keepalived.
+
+𝘀𝘂𝗱𝗼 𝗳𝗶𝗿𝗲𝘄𝗮𝗹𝗹-𝗰𝗺𝗱 --𝗿𝗲𝗹𝗼𝗮𝗱
+(Ambos servidores) Aplica los cambios en caliente recargando las reglas sin reiniciar el servicio.
+
+Paso 7: Habilitar enlaces de IP no locales y persistencia
+
+𝘀𝘂𝗱𝗼 𝘀𝘆𝘀𝗰𝘁𝗹 -𝘄 𝗻𝗲𝘁.𝗶𝗽𝘃𝟰.𝗶𝗽_𝗻𝗼𝗻𝗹𝗼𝗰𝗮𝗹_𝗯𝗶𝗻𝗱=𝟭
+(Ambos servidores) Permite que los servicios se vinculen a IPs virtuales no asignadas físicamente en tiempo de ejecución.
+
+𝗲𝗰𝗵𝗼 "𝗻𝗲𝘁.𝗶𝗽𝘃𝟰.𝗶𝗽_𝗻𝗼𝗻𝗹𝗼𝗰𝗮𝗹_𝗯𝗶𝗻𝗱 = 𝟭" | 𝘀𝘂𝗱𝗼 𝘁𝗲𝗲 -𝗮 /𝗲𝘁𝗰/𝘀𝘆𝘀𝗰𝘁𝗹.𝗰𝗼𝗻𝗳
+(Ambos servidores) Guarda el cambio al final del archivo del sistema para que persista tras reiniciar.
+
+Paso 8: Habilitar e iniciar Keepalived
+
+𝘀𝘂𝗱𝗼 𝘀𝘆𝘀𝘁𝗲𝗺𝗰𝘁𝗹 𝗲𝗻𝗮𝗯𝗹𝗲 --𝗻𝗼𝘄 𝗸𝗲𝗲𝗽𝗮𝗹𝗶𝘃𝗲𝗱
+(Ambos servidores) Configura Keepalived para que inicie automáticamente con el sistema y lo pone en marcha.
+
+Paso 9: Verificar la interfaz de red y la VIP (Solo en el Servidor 1)
+
+𝗶𝗽 𝗮 𝘀𝗵𝗼𝘄 𝗲𝗻𝘀𝟭𝟲𝟬
+(Servidor 1) Muestra el estado actual y las direcciones IP asignadas a la interfaz de red ens160 para comprobar que tiene la VIP (debe aparecer reflejada la IP virtual 10.0.0.100).
+
+Paso 10: Validación de la Alta Disponibilidad (Failover)
+
+𝗵𝘁𝘁𝗽://𝟭𝟬.𝟬.𝟬.𝟭𝟬𝟬
+Prueba normal en el navegador: abre el navegador web en Windows e ingresa a la VIP para ver el mensaje "Servidor 1 (Server 1)".
+
+𝘀𝘂𝗱𝗼 𝘀𝘆𝘀𝘁𝗲𝗺𝗰𝘁𝗹 𝘀𝘁𝗼𝗽 𝗸𝗲𝗲𝗽𝗮𝗹𝗶𝘃𝗲𝗱
+(Servidor 1) Detiene temporalmente el servicio Keepalived para simular una falla en el nodo principal.
+
+𝗵𝘁𝘁𝗽://𝟭𝟬.𝟬.𝟬.𝟭𝟬𝟬
+Comprobación final: vuelve a cargar la página en el navegador. El clúster conmutará automáticamente y ahora visualizarás "Servidor 2 (Server 2)".
