@@ -1,1 +1,342 @@
-
+ript txt de comandos utilizados en laboratorios modulo v (seguridad) · TXT
+𝗖𝗢𝗠𝗔𝗡𝗗𝗢𝗦 𝗨𝗦𝗔𝗗𝗢𝗦 𝗣𝗔𝗥𝗔 𝗘𝗟 𝗟𝗔𝗕𝗢𝗥𝗔𝗧𝗢𝗥𝗜𝗢 𝗗𝗘𝗟 𝗠𝗢́𝗗𝗨𝗟𝗢 𝗩
+ 
+============================================================================================================================================================================================
+𝗖𝗢𝗠𝗔𝗡𝗗𝗢𝗦 𝗨𝗦𝗔𝗗𝗢𝗦 𝗣𝗥𝗔́𝗖𝗧𝗜𝗖𝗔 𝟭: 𝗖𝗜𝗙𝗥𝗔𝗗𝗢
+ 
+Paso 1: Descargue la herramienta gpg2, instalarla y configurarla
+ 
+𝘀𝘂𝗱𝗼 𝗱𝗻𝗳 𝗶𝗻𝘀𝘁𝗮𝗹𝗹 -𝘆 𝗴𝗻𝘂𝗽𝗴𝟮
+Instala el paquete GnuPG2, que trae el comando gpg2; si ya está instalado, solo te avisa.
+ 
+𝗴𝗽𝗴𝟮 --𝘃𝗲𝗿𝘀𝗶𝗼𝗻
+Muestra la versión de gpg2 instalada y confirma que la instalación funciona.
+ 
+𝗴𝗽𝗴𝟮 --𝗹𝗶𝘀𝘁-𝗸𝗲𝘆𝘀
+Lista las claves guardadas y, la primera vez, crea los archivos de configuración de gpg2.
+ 
+Paso 2: Cree un directorio, y dentro un archivo y cífrelo utilizando gpg2
+ 
+𝗺𝗸𝗱𝗶𝗿 𝗰𝗶𝗳𝗿𝗮𝗱𝗼
+Crea una carpeta nueva llamada cifrado.
+ 
+𝗰𝗱 𝗰𝗶𝗳𝗿𝗮𝗱𝗼
+Entra a la carpeta cifrado.
+ 
+𝗲𝗰𝗵𝗼 "𝗘𝘀𝘁𝗲 𝗲𝘀 𝘂𝗻 𝗺𝗲𝗻𝘀𝗮𝗷𝗲 𝘀𝗲𝗰𝗿𝗲𝘁𝗼 𝗱𝗲 𝗹𝗮 𝗽𝗿𝗮𝗰𝘁𝗶𝗰𝗮 𝗱𝗲 𝗰𝗶𝗳𝗿𝗮𝗱𝗼" > 𝗽𝗿𝘂𝗲𝗯𝗮_𝗰𝗶𝗳𝗿𝗮𝗱𝗼.𝘁𝘅𝘁
+Crea el archivo prueba_cifrado.txt con esa frase dentro.
+ 
+𝗴𝗽𝗴𝟮 -𝗰 𝗽𝗿𝘂𝗲𝗯𝗮_𝗰𝗶𝗳𝗿𝗮𝗱𝗼.𝘁𝘅𝘁
+Cifra el archivo con una contraseña (cifrado simétrico) y genera prueba_cifrado.txt.gpg.
+ 
+𝗹𝘀
+Lista los archivos de la carpeta para comprobar que se creó el archivo cifrado .gpg.
+ 
+Paso 3: Intente acceder al archivo cifrado
+ 
+𝗰𝗮𝘁 𝗽𝗿𝘂𝗲𝗯𝗮_𝗰𝗶𝗳𝗿𝗮𝗱𝗼.𝘁𝘅𝘁.𝗴𝗽𝗴
+Intenta mostrar el contenido del archivo cifrado; salen símbolos ilegibles porque no se puede leer sin la contraseña.
+ 
+Paso 4: Luego descifre el archivo y muestre el contenido del mismo
+ 
+𝗴𝗽𝗴𝟮 -𝗼 𝗽𝗿𝘂𝗲𝗯𝗮_𝗱𝗲𝘀𝗰𝗶𝗳𝗿𝗮𝗱𝗼.𝘁𝘅𝘁 -𝗱 𝗽𝗿𝘂𝗲𝗯𝗮_𝗰𝗶𝗳𝗿𝗮𝗱𝗼.𝘁𝘅𝘁.𝗴𝗽𝗴
+Descifra el archivo cifrado con la contraseña y guarda el resultado en prueba_descifrado.txt.
+ 
+𝗰𝗮𝘁 𝗽𝗿𝘂𝗲𝗯𝗮_𝗱𝗲𝘀𝗰𝗶𝗳𝗿𝗮𝗱𝗼.𝘁𝘅𝘁
+Muestra el contenido del archivo ya descifrado, que es el texto original.
+ 
+============================================================================================================================================================================================
+𝗖𝗢𝗠𝗔𝗡𝗗𝗢𝗦 𝗨𝗦𝗔𝗗𝗢𝗦 𝗣𝗥𝗔́𝗖𝗧𝗜𝗖𝗔 𝟮: 𝗜𝗣 𝗧𝗔𝗕𝗟𝗘𝗦 - 𝗨𝗙𝗪/𝗙𝗜𝗥𝗘𝗪𝗔𝗟𝗟-𝗖𝗠𝗗
+ 
+Paso 1: Habilite los servicios de http, ftp y ssh en el servidor, muestre ambos servicios funcionando de manera correcta
+ 
+𝘀𝘂𝗱𝗼 𝗱𝗻𝗳 𝗶𝗻𝘀𝘁𝗮𝗹𝗹 -𝘆 𝘃𝘀𝗳𝘁𝗽𝗱
+Instala el servidor FTP (vsftpd), que no estaba instalado.
+ 
+𝘀𝘂𝗱𝗼 𝘀𝘆𝘀𝘁𝗲𝗺𝗰𝘁𝗹 𝗲𝗻𝗮𝗯𝗹𝗲 --𝗻𝗼𝘄 𝗵𝘁𝘁𝗽𝗱 𝘃𝘀𝗳𝘁𝗽𝗱 𝘀𝘀𝗵𝗱
+Inicia los servicios web, FTP y SSH, y los deja habilitados para que arranquen con el sistema.
+ 
+𝘀𝘂𝗱𝗼 𝗳𝗶𝗿𝗲𝘄𝗮𝗹𝗹-𝗰𝗺𝗱 --𝗽𝗲𝗿𝗺𝗮𝗻𝗲𝗻𝘁 --𝗮𝗱𝗱-𝘀𝗲𝗿𝘃𝗶𝗰𝗲=𝗳𝘁𝗽
+Agrega el servicio ftp (puerto 21) a las reglas guardadas de firewalld.
+ 
+𝘀𝘂𝗱𝗼 𝗳𝗶𝗿𝗲𝘄𝗮𝗹𝗹-𝗰𝗺𝗱 --𝗿𝗲𝗹𝗼𝗮𝗱
+Recarga firewalld para aplicar las reglas guardadas.
+ 
+𝗴𝗲𝘁𝘀𝗲𝗯𝗼𝗼𝗹 -𝗮 | 𝗴𝗿𝗲𝗽 𝗳𝘁𝗽
+Lista los permisos (booleanos) de SELinux relacionados con FTP.
+ 
+𝘀𝘂𝗱𝗼 𝘀𝗲𝘁𝘀𝗲𝗯𝗼𝗼𝗹 -𝗣 𝗳𝘁𝗽𝗱_𝗳𝘂𝗹𝗹_𝗮𝗰𝗰𝗲𝘀𝘀 𝗼𝗻
+Activa de forma permanente el permiso de SELinux para que vsftpd acceda a las carpetas de los usuarios.
+ 
+𝘀𝘆𝘀𝘁𝗲𝗺𝗰𝘁𝗹 𝘀𝘁𝗮𝘁𝘂𝘀 𝗵𝘁𝘁𝗽𝗱 𝘃𝘀𝗳𝘁𝗽𝗱 𝘀𝘀𝗵𝗱 --𝗻𝗼-𝗽𝗮𝗴𝗲𝗿
+Muestra el estatus detallado de los tres servicios, donde se ve que están corriendo.
+ 
+𝘀𝘆𝘀𝘁𝗲𝗺𝗰𝘁𝗹 𝗶𝘀-𝗮𝗰𝘁𝗶𝘃𝗲 𝗵𝘁𝘁𝗽𝗱 𝘃𝘀𝗳𝘁𝗽𝗱 𝘀𝘀𝗵𝗱
+Responde con una palabra por servicio indicando si está activo.
+ 
+𝘀𝘂𝗱𝗼 𝘀𝘀 -𝘁𝘂𝗹𝗽𝗻 | 𝗴𝗿𝗲𝗽 -𝗘 ':(𝟮𝟭|𝟮𝟮|𝟴𝟬)\𝗯'
+Muestra que los puertos 21, 22 y 80 están en escucha y qué programa usa cada uno.
+ 
+𝗰𝘂𝗿𝗹 -𝗜 𝗵𝘁𝘁𝗽://𝟭𝟵𝟮.𝟭𝟲𝟴.𝟬.𝟭𝟬𝟵
+Prueba el servicio web pidiendo los encabezados de la página (debe responder 200 OK).
+ 
+𝗰𝘂𝗿𝗹 -𝘂 𝘃𝗮𝗹𝗲𝗻𝘁𝗶𝗻𝗮 𝗳𝘁𝗽://𝟭𝟵𝟮.𝟭𝟲𝟴.𝟬.𝟭𝟬𝟵/
+Prueba el servicio FTP: entra con el usuario y lista los archivos de su carpeta personal.
+ 
+𝘀𝘀𝗵 𝘃𝗮𝗹𝗲𝗻𝘁𝗶𝗻𝗮@𝟭𝟵𝟮.𝟭𝟲𝟴.𝟬.𝟭𝟬𝟵
+Prueba el servicio SSH abriendo una sesión remota en el servidor.
+ 
+𝗲𝘅𝗶𝘁
+Cierra la sesión SSH.
+ 
+Paso 2: Utilizando IP tables bloquee el tráfico del puerto 80, 21 y 22 para bloquear las conexiones hacia ambos servicios, muestre los resultados
+ 
+𝘀𝘂𝗱𝗼 𝗶𝗽𝘁𝗮𝗯𝗹𝗲𝘀 -𝗔 𝗜𝗡𝗣𝗨𝗧 -𝗽 𝘁𝗰𝗽 --𝗱𝗽𝗼𝗿𝘁 𝟴𝟬 -𝗷 𝗗𝗥𝗢𝗣
+Agrega una regla que descarta el tráfico TCP entrante al puerto 80 (web).
+ 
+𝘀𝘂𝗱𝗼 𝗶𝗽𝘁𝗮𝗯𝗹𝗲𝘀 -𝗔 𝗜𝗡𝗣𝗨𝗧 -𝗽 𝘁𝗰𝗽 --𝗱𝗽𝗼𝗿𝘁 𝟮𝟭 -𝗷 𝗗𝗥𝗢𝗣
+Agrega una regla que descarta el tráfico TCP entrante al puerto 21 (FTP).
+ 
+𝘀𝘂𝗱𝗼 𝗶𝗽𝘁𝗮𝗯𝗹𝗲𝘀 -𝗔 𝗜𝗡𝗣𝗨𝗧 -𝗽 𝘁𝗰𝗽 --𝗱𝗽𝗼𝗿𝘁 𝟮𝟮 -𝗷 𝗗𝗥𝗢𝗣
+Agrega una regla que descarta el tráfico TCP entrante al puerto 22 (SSH).
+ 
+𝘀𝘂𝗱𝗼 𝗶𝗽𝘁𝗮𝗯𝗹𝗲𝘀 -𝗟 -𝗻
+Lista las reglas de iptables para mostrar que las tres reglas DROP quedaron aplicadas.
+ 
+𝗰𝘂𝗿𝗹 --𝗰𝗼𝗻𝗻𝗲𝗰𝘁-𝘁𝗶𝗺𝗲𝗼𝘂𝘁 𝟱 -𝗜 𝗵𝘁𝘁𝗽://𝟭𝟵𝟮.𝟭𝟲𝟴.𝟬.𝟭𝟬𝟵
+Prueba el puerto 80 con un límite de 5 segundos; ahora falla por tiempo agotado.
+ 
+𝗰𝘂𝗿𝗹 --𝗰𝗼𝗻𝗻𝗲𝗰𝘁-𝘁𝗶𝗺𝗲𝗼𝘂𝘁 𝟱 𝗳𝘁𝗽://𝟭𝟵𝟮.𝟭𝟲𝟴.𝟬.𝟭𝟬𝟵/
+Prueba el puerto 21 con un límite de 5 segundos; ahora falla por tiempo agotado.
+ 
+𝘀𝘀𝗵 -𝗼 𝗖𝗼𝗻𝗻𝗲𝗰𝘁𝗧𝗶𝗺𝗲𝗼𝘂𝘁=𝟱 𝘃𝗮𝗹𝗲𝗻𝘁𝗶𝗻𝗮@𝟭𝟵𝟮.𝟭𝟲𝟴.𝟬.𝟭𝟬𝟵
+Prueba el puerto 22 con un límite de 5 segundos; ahora falla por tiempo agotado.
+ 
+Paso 3: Utilizando IP tables habilite nuevamente el tráfico del puerto 80, 21 y 22 para permitir las conexiones hacia ambos servicios
+ 
+𝘀𝘂𝗱𝗼 𝗶𝗽𝘁𝗮𝗯𝗹𝗲𝘀 -𝗗 𝗜𝗡𝗣𝗨𝗧 -𝗽 𝘁𝗰𝗽 --𝗱𝗽𝗼𝗿𝘁 𝟴𝟬 -𝗷 𝗗𝗥𝗢𝗣
+Elimina la regla que bloqueaba el puerto 80.
+ 
+𝘀𝘂𝗱𝗼 𝗶𝗽𝘁𝗮𝗯𝗹𝗲𝘀 -𝗗 𝗜𝗡𝗣𝗨𝗧 -𝗽 𝘁𝗰𝗽 --𝗱𝗽𝗼𝗿𝘁 𝟮𝟭 -𝗷 𝗗𝗥𝗢𝗣
+Elimina la regla que bloqueaba el puerto 21.
+ 
+𝘀𝘂𝗱𝗼 𝗶𝗽𝘁𝗮𝗯𝗹𝗲𝘀 -𝗗 𝗜𝗡𝗣𝗨𝗧 -𝗽 𝘁𝗰𝗽 --𝗱𝗽𝗼𝗿𝘁 𝟮𝟮 -𝗷 𝗗𝗥𝗢𝗣
+Elimina la regla que bloqueaba el puerto 22.
+ 
+𝘀𝘂𝗱𝗼 𝗶𝗽𝘁𝗮𝗯𝗹𝗲𝘀 -𝗟 -𝗻
+Lista las reglas para mostrar que ya no hay reglas de bloqueo.
+ 
+𝗰𝘂𝗿𝗹 -𝗜 𝗵𝘁𝘁𝗽://𝟭𝟵𝟮.𝟭𝟲𝟴.𝟬.𝟭𝟬𝟵, 𝗰𝘂𝗿𝗹 -𝘂 𝘃𝗮𝗹𝗲𝗻𝘁𝗶𝗻𝗮 𝗳𝘁𝗽://𝟭𝟵𝟮.𝟭𝟲𝟴.𝟬.𝟭𝟬𝟵/ y 𝘀𝘀𝗵 𝘃𝗮𝗹𝗲𝗻𝘁𝗶𝗻𝗮@𝟭𝟵𝟮.𝟭𝟲𝟴.𝟬.𝟭𝟬𝟵
+Repiten las tres pruebas de conexión, que ahora vuelven a funcionar.
+ 
+Paso 4: Utilizando firewall-cmd (distro basada en Red Hat) bloquee el tráfico del puerto 80, 21 y 22 para bloquear las conexiones hacia ambos servicios
+ 
+𝘀𝘂𝗱𝗼 𝗳𝗶𝗿𝗲𝘄𝗮𝗹𝗹-𝗰𝗺𝗱 --𝗿𝗲𝗺𝗼𝘃𝗲-𝘀𝗲𝗿𝘃𝗶𝗰𝗲=𝗵𝘁𝘁𝗽
+Quita el servicio http (puerto 80) de las reglas activas de firewalld, con lo que se bloquea.
+ 
+𝘀𝘂𝗱𝗼 𝗳𝗶𝗿𝗲𝘄𝗮𝗹𝗹-𝗰𝗺𝗱 --𝗿𝗲𝗺𝗼𝘃𝗲-𝘀𝗲𝗿𝘃𝗶𝗰𝗲=𝗳𝘁𝗽
+Quita el servicio ftp (puerto 21) de las reglas activas, con lo que se bloquea.
+ 
+𝘀𝘂𝗱𝗼 𝗳𝗶𝗿𝗲𝘄𝗮𝗹𝗹-𝗰𝗺𝗱 --𝗿𝗲𝗺𝗼𝘃𝗲-𝘀𝗲𝗿𝘃𝗶𝗰𝗲=𝘀𝘀𝗵
+Quita el servicio ssh (puerto 22) de las reglas activas, con lo que se bloquea.
+ 
+𝘀𝘂𝗱𝗼 𝗳𝗶𝗿𝗲𝘄𝗮𝗹𝗹-𝗰𝗺𝗱 --𝗹𝗶𝘀𝘁-𝘀𝗲𝗿𝘃𝗶𝗰𝗲𝘀
+Muestra los servicios permitidos, donde ya no aparecen http, ftp ni ssh.
+ 
+𝗰𝘂𝗿𝗹 --𝗰𝗼𝗻𝗻𝗲𝗰𝘁-𝘁𝗶𝗺𝗲𝗼𝘂𝘁 𝟱 -𝗜 𝗵𝘁𝘁𝗽://𝟭𝟵𝟮.𝟭𝟲𝟴.𝟬.𝟭𝟬𝟵, 𝗰𝘂𝗿𝗹 --𝗰𝗼𝗻𝗻𝗲𝗰𝘁-𝘁𝗶𝗺𝗲𝗼𝘂𝘁 𝟱 𝗳𝘁𝗽://𝟭𝟵𝟮.𝟭𝟲𝟴.𝟬.𝟭𝟬𝟵/ y 𝘀𝘀𝗵 -𝗼 𝗖𝗼𝗻𝗻𝗲𝗰𝘁𝗧𝗶𝗺𝗲𝗼𝘂𝘁=𝟱 𝘃𝗮𝗹𝗲𝗻𝘁𝗶𝗻𝗮@𝟭𝟵𝟮.𝟭𝟲𝟴.𝟬.𝟭𝟬𝟵 (desde el cliente)
+Prueban los tres servicios desde la otra máquina, y ahora el firewall los rechaza al instante.
+ 
+Paso 5: Habilite nuevamente el tráfico del puerto 80, 21 y 22 para permitir las conexiones hacia ambos servicios
+ 
+𝘀𝘂𝗱𝗼 𝗳𝗶𝗿𝗲𝘄𝗮𝗹𝗹-𝗰𝗺𝗱 --𝗮𝗱𝗱-𝘀𝗲𝗿𝘃𝗶𝗰𝗲=𝗵𝘁𝘁𝗽
+Vuelve a permitir el servicio http (puerto 80).
+ 
+𝘀𝘂𝗱𝗼 𝗳𝗶𝗿𝗲𝘄𝗮𝗹𝗹-𝗰𝗺𝗱 --𝗮𝗱𝗱-𝘀𝗲𝗿𝘃𝗶𝗰𝗲=𝗳𝘁𝗽
+Vuelve a permitir el servicio ftp (puerto 21).
+ 
+𝘀𝘂𝗱𝗼 𝗳𝗶𝗿𝗲𝘄𝗮𝗹𝗹-𝗰𝗺𝗱 --𝗮𝗱𝗱-𝘀𝗲𝗿𝘃𝗶𝗰𝗲=𝘀𝘀𝗵
+Vuelve a permitir el servicio ssh (puerto 22).
+ 
+𝘀𝘂𝗱𝗼 𝗳𝗶𝗿𝗲𝘄𝗮𝗹𝗹-𝗰𝗺𝗱 --𝗹𝗶𝘀𝘁-𝘀𝗲𝗿𝘃𝗶𝗰𝗲𝘀
+Muestra los servicios permitidos, donde ya reaparecen ftp, http y ssh.
+ 
+𝗰𝘂𝗿𝗹 -𝗜 𝗵𝘁𝘁𝗽://𝟭𝟵𝟮.𝟭𝟲𝟴.𝟬.𝟭𝟬𝟵, 𝗰𝘂𝗿𝗹 -𝘂 𝘃𝗮𝗹𝗲𝗻𝘁𝗶𝗻𝗮 𝗳𝘁𝗽://𝟭𝟵𝟮.𝟭𝟲𝟴.𝟬.𝟭𝟬𝟵/ y 𝘀𝘀𝗵 𝘃𝗮𝗹𝗲𝗻𝘁𝗶𝗻𝗮@𝟭𝟵𝟮.𝟭𝟲𝟴.𝟬.𝟭𝟬𝟵 (desde el cliente)
+Repiten las tres pruebas desde la otra máquina, que ahora funcionan de nuevo.
+ 
+============================================================================================================================================================================================
+𝗖𝗢𝗠𝗔𝗡𝗗𝗢𝗦 𝗨𝗦𝗔𝗗𝗢𝗦 𝗣𝗥𝗔́𝗖𝗧𝗜𝗖𝗔 𝟯: 𝗜𝗡𝗦𝗧𝗔𝗟𝗔𝗖𝗜𝗢́𝗡 𝗗𝗘 𝗜𝗗𝗦 𝗦𝗡𝗢𝗥𝗧
+ 
+Paso 1: Descargar e instalar el IDS Snort
+ 
+𝘀𝘂𝗱𝗼 𝗱𝗻𝗳 𝗶𝗻𝘀𝘁𝗮𝗹𝗹 𝗴𝗶𝘁 𝗴𝗰𝗰 𝗴𝗰𝗰-𝗰++ 𝗺𝗮𝗸𝗲 𝗰𝗺𝗮𝗸𝗲 𝗮𝘂𝘁𝗼𝗰𝗼𝗻𝗳 𝗮𝘂𝘁𝗼𝗺𝗮𝗸𝗲 𝗹𝗶𝗯𝘁𝗼𝗼𝗹 𝗳𝗹𝗲𝘅 𝗯𝗶𝘀𝗼𝗻 𝗽𝗸𝗴𝗰𝗼𝗻𝗳-𝗽𝗸𝗴-𝗰𝗼𝗻𝗳𝗶𝗴 𝘄𝗴𝗲𝘁 𝘂𝗻𝘇𝗶𝗽 𝗻𝗮𝗻𝗼 𝗹𝗶𝗯𝗽𝗰𝗮𝗽-𝗱𝗲𝘃𝗲𝗹 𝗽𝗰𝗿𝗲𝟮-𝗱𝗲𝘃𝗲𝗹 𝗵𝘄𝗹𝗼𝗰-𝗱𝗲𝘃𝗲𝗹 𝗼𝗽𝗲𝗻𝘀𝘀𝗹-𝗱𝗲𝘃𝗲𝗹 𝗹𝘂𝗮𝗷𝗶𝘁-𝗱𝗲𝘃𝗲𝗹 𝘇𝗹𝗶𝗯-𝗱𝗲𝘃𝗲𝗹 𝗹𝗶𝗯𝗺𝗻𝗹-𝗱𝗲𝘃𝗲𝗹 𝗹𝗶𝗯𝗻𝗲𝘁𝗳𝗶𝗹𝘁𝗲𝗿_𝗾𝘂𝗲𝘂𝗲-𝗱𝗲𝘃𝗲𝗹 𝗹𝗶𝗯𝘁𝗶𝗿𝗽𝗰-𝗱𝗲𝘃𝗲𝗹 𝘅𝘇-𝗱𝗲𝘃𝗲𝗹 𝗹𝗶𝗯𝘂𝘂𝗶𝗱-𝗱𝗲𝘃𝗲𝗹 𝗰𝗵𝗲𝗰𝗸-𝗱𝗲𝘃𝗲𝗹 -𝘆
+Instala las herramientas de compilación y las librerías que Snort necesita.
+ 
+𝗴𝗶𝘁 𝗰𝗹𝗼𝗻𝗲 𝗵𝘁𝘁𝗽𝘀://𝗴𝗶𝘁𝗵𝘂𝗯.𝗰𝗼𝗺/𝗱𝘂𝗴𝘀𝗼𝗻𝗴/𝗹𝗶𝗯𝗱𝗻𝗲𝘁.𝗴𝗶𝘁
+Descarga el código fuente de la librería libdnet desde GitHub.
+ 
+𝗰𝗱 𝗹𝗶𝗯𝗱𝗻𝗲𝘁
+Entra a la carpeta descargada.
+ 
+./𝗰𝗼𝗻𝗳𝗶𝗴𝘂𝗿𝗲
+Verifica el sistema y prepara la compilación.
+ 
+𝗺𝗮𝗸𝗲 -𝗷𝟮
+Compila el código fuente usando 2 procesos en paralelo.
+ 
+𝘀𝘂𝗱𝗼 𝗺𝗮𝗸𝗲 𝗶𝗻𝘀𝘁𝗮𝗹𝗹
+Copia la librería compilada a las rutas del sistema.
+ 
+𝘀𝘂𝗱𝗼 𝗹𝗱𝗰𝗼𝗻𝗳𝗶𝗴
+Actualiza la lista de librerías que el sistema reconoce.
+ 
+𝗰𝗱 ~
+Regresa a la carpeta home del usuario.
+ 
+𝗴𝗶𝘁 𝗰𝗹𝗼𝗻𝗲 𝗵𝘁𝘁𝗽𝘀://𝗴𝗶𝘁𝗵𝘂𝗯.𝗰𝗼𝗺/𝘀𝗻𝗼𝗿𝘁𝟯/𝗹𝗶𝗯𝗱𝗮𝗾.𝗴𝗶𝘁
+Descarga la librería que permite a Snort capturar paquetes de la red.
+ 
+𝗰𝗱 𝗹𝗶𝗯𝗱𝗮𝗾
+Entra a la carpeta descargada.
+ 
+./𝗯𝗼𝗼𝘁𝘀𝘁𝗿𝗮𝗽
+Genera el script configure con las herramientas autotools.
+ 
+./𝗰𝗼𝗻𝗳𝗶𝗴𝘂𝗿𝗲
+Verifica el sistema y prepara la compilación.
+ 
+𝗺𝗮𝗸𝗲 -𝗷𝟮
+Compila el código fuente usando 2 procesos en paralelo.
+ 
+𝘀𝘂𝗱𝗼 𝗺𝗮𝗸𝗲 𝗶𝗻𝘀𝘁𝗮𝗹𝗹
+Copia la librería compilada a las rutas del sistema.
+ 
+𝘀𝘂𝗱𝗼 𝗹𝗱𝗰𝗼𝗻𝗳𝗶𝗴
+Actualiza la lista de librerías que el sistema reconoce.
+ 
+𝗰𝗱 ~
+Regresa a la carpeta home del usuario.
+ 
+𝗴𝗶𝘁 𝗰𝗹𝗼𝗻𝗲 𝗵𝘁𝘁𝗽𝘀://𝗴𝗶𝘁𝗵𝘂𝗯.𝗰𝗼𝗺/𝘀𝗻𝗼𝗿𝘁𝟯/𝘀𝗻𝗼𝗿𝘁𝟯.𝗴𝗶𝘁
+Descarga el código fuente oficial de Snort 3.
+ 
+𝗰𝗱 𝘀𝗻𝗼𝗿𝘁𝟯
+Entra a la carpeta descargada.
+ 
+./𝗰𝗼𝗻𝗳𝗶𝗴𝘂𝗿𝗲_𝗰𝗺𝗮𝗸𝗲.𝘀𝗵 --𝗽𝗿𝗲𝗳𝗶𝘅=/𝘂𝘀𝗿/𝗹𝗼𝗰𝗮𝗹/𝘀𝗻𝗼𝗿𝘁
+Prepara la compilación e indica que Snort se instalará en /usr/local/snort.
+ 
+𝗰𝗱 𝗯𝘂𝗶𝗹𝗱
+Entra a la carpeta donde cmake dejó los archivos de compilación.
+ 
+𝗺𝗮𝗸𝗲 -𝗷𝟮
+Compila Snort usando 2 procesos en paralelo.
+ 
+𝘀𝘂𝗱𝗼 𝗺𝗮𝗸𝗲 𝗶𝗻𝘀𝘁𝗮𝗹𝗹
+Copia Snort compilado a /usr/local/snort.
+ 
+𝘀𝘂𝗱𝗼 𝘀𝗵 -𝗰 '𝗲𝗰𝗵𝗼 "/𝘂𝘀𝗿/𝗹𝗼𝗰𝗮𝗹/𝗹𝗶𝗯" > /𝗲𝘁𝗰/𝗹𝗱.𝘀𝗼.𝗰𝗼𝗻𝗳.𝗱/𝘀𝗻𝗼𝗿𝘁.𝗰𝗼𝗻𝗳'
+Crea un archivo que agrega /usr/local/lib a las rutas donde el sistema busca librerías.
+ 
+𝘀𝘂𝗱𝗼 𝘀𝗵 -𝗰 '𝗲𝗰𝗵𝗼 "/𝘂𝘀𝗿/𝗹𝗼𝗰𝗮𝗹/𝗹𝗶𝗯𝟲𝟰" >> /𝗲𝘁𝗰/𝗹𝗱.𝘀𝗼.𝗰𝗼𝗻𝗳.𝗱/𝘀𝗻𝗼𝗿𝘁.𝗰𝗼𝗻𝗳'
+Agrega /usr/local/lib64 al mismo archivo sin borrar lo anterior.
+ 
+𝘀𝘂𝗱𝗼 𝗹𝗱𝗰𝗼𝗻𝗳𝗶𝗴
+Hace que el sistema reconozca las rutas recién registradas.
+ 
+𝘀𝘂𝗱𝗼 𝗹𝗻 -𝘀𝗳 /𝘂𝘀𝗿/𝗹𝗼𝗰𝗮𝗹/𝘀𝗻𝗼𝗿𝘁/𝗯𝗶𝗻/𝘀𝗻𝗼𝗿𝘁 /𝘂𝘀𝗿/𝗯𝗶𝗻/𝘀𝗻𝗼𝗿𝘁
+Crea un acceso directo para ejecutar solo snort desde cualquier carpeta.
+ 
+𝗹𝗱𝗰𝗼𝗻𝗳𝗶𝗴 -𝗽 | 𝗴𝗿𝗲𝗽 𝗹𝗶𝗯𝗱𝗮𝗾
+Muestra si el sistema ya reconoce la librería libdaq (usado al corregir el error).
+ 
+Paso 2: Crear las reglas de detección (ICMP, puerto 21, 22 y 80)
+ 
+𝘀𝘂𝗱𝗼 𝗻𝗮𝗻𝗼 /𝘂𝘀𝗿/𝗹𝗼𝗰𝗮𝗹/𝘀𝗻𝗼𝗿𝘁/𝗲𝘁𝗰/𝘀𝗻𝗼𝗿𝘁/𝗹𝗼𝗰𝗮𝗹.𝗿𝘂𝗹𝗲𝘀
+Abre el editor para crear el archivo donde se escriben las 4 reglas.
+ 
+𝘀𝘂𝗱𝗼 𝘀𝗻𝗼𝗿𝘁 -𝗧 -𝗰 /𝘂𝘀𝗿/𝗹𝗼𝗰𝗮𝗹/𝘀𝗻𝗼𝗿𝘁/𝗲𝘁𝗰/𝘀𝗻𝗼𝗿𝘁/𝘀𝗻𝗼𝗿𝘁.𝗹𝘂𝗮 -𝗥 /𝘂𝘀𝗿/𝗹𝗼𝗰𝗮𝗹/𝘀𝗻𝗼𝗿𝘁/𝗲𝘁𝗰/𝘀𝗻𝗼𝗿𝘁/𝗹𝗼𝗰𝗮𝗹.𝗿𝘂𝗹𝗲𝘀 --𝗱𝗮𝗾-𝗱𝗶𝗿 /𝘂𝘀𝗿/𝗹𝗼𝗰𝗮𝗹/𝗹𝗶𝗯/𝗱𝗮𝗾
+Prueba que la configuración y las reglas no tengan errores, sin iniciar la captura.
+ 
+Paso 3: Ejecutar el IDS
+ 
+𝘀𝘂𝗱𝗼 𝘀𝗻𝗼𝗿𝘁 -𝗰 /𝘂𝘀𝗿/𝗹𝗼𝗰𝗮𝗹/𝘀𝗻𝗼𝗿𝘁/𝗲𝘁𝗰/𝘀𝗻𝗼𝗿𝘁/𝘀𝗻𝗼𝗿𝘁.𝗹𝘂𝗮 -𝗥 /𝘂𝘀𝗿/𝗹𝗼𝗰𝗮𝗹/𝘀𝗻𝗼𝗿𝘁/𝗲𝘁𝗰/𝘀𝗻𝗼𝗿𝘁/𝗹𝗼𝗰𝗮𝗹.𝗿𝘂𝗹𝗲𝘀 -𝗶 𝗲𝗻𝘀𝟭𝟲𝟬 --𝗱𝗮𝗾-𝗱𝗶𝗿 /𝘂𝘀𝗿/𝗹𝗼𝗰𝗮𝗹/𝗹𝗶𝗯/𝗱𝗮𝗾 -𝗔 𝗮𝗹𝗲𝗿𝘁_𝗳𝗮𝘀𝘁 -𝗸 𝗻𝗼𝗻𝗲
+Inicia Snort vigilando la interfaz ens160 con las reglas creadas y muestra las alertas en pantalla.
+ 
+Paso 4: Pruebas desde la máquina host (Windows 11, PowerShell)
+ 
+𝗽𝗶𝗻𝗴 𝟭𝟵𝟮.𝟭𝟲𝟴.𝟮𝟰𝟯.𝟭𝟯𝟬
+Envía paquetes ICMP a la VM para activar la regla 1.
+ 
+𝗧𝗲𝘀𝘁-𝗡𝗲𝘁𝗖𝗼𝗻𝗻𝗲𝗰𝘁𝗶𝗼𝗻 𝟭𝟵𝟮.𝟭𝟲𝟴.𝟮𝟰𝟯.𝟭𝟯𝟬 -𝗣𝗼𝗿𝘁 𝟮𝟭
+Intenta conectarse al puerto 21 de la VM para activar la regla 2.
+ 
+𝗧𝗲𝘀𝘁-𝗡𝗲𝘁𝗖𝗼𝗻𝗻𝗲𝗰𝘁𝗶𝗼𝗻 𝟭𝟵𝟮.𝟭𝟲𝟴.𝟮𝟰𝟯.𝟭𝟯𝟬 -𝗣𝗼𝗿𝘁 𝟮𝟮
+Intenta conectarse al puerto 22 de la VM para activar la regla 3.
+ 
+𝗧𝗲𝘀𝘁-𝗡𝗲𝘁𝗖𝗼𝗻𝗻𝗲𝗰𝘁𝗶𝗼𝗻 𝟭𝟵𝟮.𝟭𝟲𝟴.𝟮𝟰𝟯.𝟭𝟯𝟬 -𝗣𝗼𝗿𝘁 𝟴𝟬
+Intenta conectarse al puerto 80 de la VM para activar la regla 4.
+ 
+============================================================================================================================================================================================
+𝗖𝗢𝗠𝗔𝗡𝗗𝗢𝗦 𝗨𝗦𝗔𝗗𝗢𝗦 𝗣𝗥𝗔́𝗖𝗧𝗜𝗖𝗔 𝟰: 𝗖𝗢𝗡𝗙𝗜𝗚𝗨𝗥𝗔𝗥 𝟮𝗙𝗔 𝗖𝗢𝗡 𝗚𝗢𝗢𝗚𝗟𝗘 𝗔𝗨𝗧𝗛𝗘𝗡𝗧𝗜𝗖𝗔𝗧𝗢𝗥, 𝗠𝗢́𝗗𝗨𝗟𝗢 𝗣𝗔𝗠 𝗣𝗔𝗥𝗔 𝗔𝗖𝗖𝗘𝗦𝗢 𝗦𝗦𝗛
+ 
+Paso 1: Instalar y configurar Google Authenticator para el usuario que accede por SSH
+ 
+𝘀𝘂𝗱𝗼 𝗱𝗻𝗳 𝗶𝗻𝘀𝘁𝗮𝗹𝗹 𝗴𝗼𝗼𝗴𝗹𝗲-𝗮𝘂𝘁𝗵𝗲𝗻𝘁𝗶𝗰𝗮𝘁𝗼𝗿 -𝘆
+Instala el paquete de Google Authenticator desde el repositorio EPEL.
+ 
+𝗴𝗼𝗼𝗴𝗹𝗲-𝗮𝘂𝘁𝗵𝗲𝗻𝘁𝗶𝗰𝗮𝘁𝗼𝗿
+Genera la clave secreta, crea el archivo ~/.google_authenticator y permite vincular la app del teléfono (por QR o escribiendo la clave a mano).
+ 
+Paso 2: Configurar PAM para usar Google Authenticator
+ 
+𝘀𝘂𝗱𝗼 𝗺𝗸𝗱𝗶𝗿 -𝗽 /𝘃𝗮𝗿/𝗹𝗶𝗯/𝗴𝗼𝗼𝗴𝗹𝗲-𝗮𝘂𝘁𝗵𝗲𝗻𝘁𝗶𝗰𝗮𝘁𝗼𝗿
+Crea la carpeta donde se guardará el archivo secreto en una ubicación que SELinux permite.
+ 
+𝘀𝘂𝗱𝗼 𝗰𝗽 ~/.𝗴𝗼𝗼𝗴𝗹𝗲_𝗮𝘂𝘁𝗵𝗲𝗻𝘁𝗶𝗰𝗮𝘁𝗼𝗿 /𝘃𝗮𝗿/𝗹𝗶𝗯/𝗴𝗼𝗼𝗴𝗹𝗲-𝗮𝘂𝘁𝗵𝗲𝗻𝘁𝗶𝗰𝗮𝘁𝗼𝗿/𝘃𝗮𝗹𝗲𝗻𝘁𝗶𝗻𝗮
+Copia el archivo secreto del usuario a la nueva carpeta.
+ 
+𝘀𝘂𝗱𝗼 𝗰𝗵𝗼𝘄𝗻 𝗿𝗼𝗼𝘁:𝗿𝗼𝗼𝘁 /𝘃𝗮𝗿/𝗹𝗶𝗯/𝗴𝗼𝗼𝗴𝗹𝗲-𝗮𝘂𝘁𝗵𝗲𝗻𝘁𝗶𝗰𝗮𝘁𝗼𝗿/𝘃𝗮𝗹𝗲𝗻𝘁𝗶𝗻𝗮
+Deja el archivo a nombre de root.
+ 
+𝘀𝘂𝗱𝗼 𝗰𝗵𝗺𝗼𝗱 𝟲𝟬𝟬 /𝘃𝗮𝗿/𝗹𝗶𝗯/𝗴𝗼𝗼𝗴𝗹𝗲-𝗮𝘂𝘁𝗵𝗲𝗻𝘁𝗶𝗰𝗮𝘁𝗼𝗿/𝘃𝗮𝗹𝗲𝗻𝘁𝗶𝗻𝗮
+Restringe el acceso al archivo: solo el dueño puede leerlo y escribirlo.
+ 
+𝘀𝘂𝗱𝗼 𝗿𝗲𝘀𝘁𝗼𝗿𝗲𝗰𝗼𝗻 -𝗥𝘃 /𝘃𝗮𝗿/𝗹𝗶𝗯/𝗴𝗼𝗼𝗴𝗹𝗲-𝗮𝘂𝘁𝗵𝗲𝗻𝘁𝗶𝗰𝗮𝘁𝗼𝗿
+Aplica la etiqueta SELinux correcta a la carpeta y su contenido.
+ 
+𝗲𝗰𝗵𝗼 '𝗮𝘂𝘁𝗵 𝗿𝗲𝗾𝘂𝗶𝗿𝗲𝗱 𝗽𝗮𝗺_𝗴𝗼𝗼𝗴𝗹𝗲_𝗮𝘂𝘁𝗵𝗲𝗻𝘁𝗶𝗰𝗮𝘁𝗼𝗿.𝘀𝗼' | 𝘀𝘂𝗱𝗼 𝘁𝗲𝗲 -𝗮 /𝗲𝘁𝗰/𝗽𝗮𝗺.𝗱/𝘀𝘀𝗵𝗱
+Agrega al final del archivo de PAM de SSH la línea que activa el módulo de Google Authenticator.
+ 
+𝘀𝘂𝗱𝗼 𝘀𝗲𝗱 -𝗶 '𝘀|^𝗮𝘂𝘁𝗵 𝗿𝗲𝗾𝘂𝗶𝗿𝗲𝗱 𝗽𝗮𝗺_𝗴𝗼𝗼𝗴𝗹𝗲_𝗮𝘂𝘁𝗵𝗲𝗻𝘁𝗶𝗰𝗮𝘁𝗼𝗿.𝘀𝗼.*|𝗮𝘂𝘁𝗵 𝗿𝗲𝗾𝘂𝗶𝗿𝗲𝗱 𝗽𝗮𝗺_𝗴𝗼𝗼𝗴𝗹𝗲_𝗮𝘂𝘁𝗵𝗲𝗻𝘁𝗶𝗰𝗮𝘁𝗼𝗿.𝘀𝗼 𝘀𝗲𝗰𝗿𝗲𝘁=/𝘃𝗮𝗿/𝗹𝗶𝗯/𝗴𝗼𝗼𝗴𝗹𝗲-𝗮𝘂𝘁𝗵𝗲𝗻𝘁𝗶𝗰𝗮𝘁𝗼𝗿/${𝗨𝗦𝗘𝗥} 𝘂𝘀𝗲𝗿=𝗿𝗼𝗼𝘁|' /𝗲𝘁𝗰/𝗽𝗮𝗺.𝗱/𝘀𝘀𝗵𝗱
+Modifica la línea de PAM para que lea el archivo secreto desde la nueva ruta.
+ 
+𝘀𝘂𝗱𝗼 𝘁𝗮𝗶𝗹 -𝗻 𝟯 /𝗲𝘁𝗰/𝗽𝗮𝗺.𝗱/𝘀𝘀𝗵𝗱
+Muestra las últimas líneas del archivo para verificar que la línea de PAM quedó correcta.
+ 
+Paso 3: Configurar SSH para solicitar 2FA
+ 
+𝘀𝘂𝗱𝗼 𝘁𝗲𝗲 /𝗲𝘁𝗰/𝘀𝘀𝗵/𝘀𝘀𝗵𝗱_𝗰𝗼𝗻𝗳𝗶𝗴.𝗱/𝟭𝟬-𝟮𝗳𝗮.𝗰𝗼𝗻𝗳 <<'𝗘𝗢𝗙'
+𝗞𝗯𝗱𝗜𝗻𝘁𝗲𝗿𝗮𝗰𝘁𝗶𝘃𝗲𝗔𝘂𝘁𝗵𝗲𝗻𝘁𝗶𝗰𝗮𝘁𝗶𝗼𝗻 𝘆𝗲𝘀
+𝗨𝘀𝗲𝗣𝗔𝗠 𝘆𝗲𝘀
+𝗔𝘂𝘁𝗵𝗲𝗻𝘁𝗶𝗰𝗮𝘁𝗶𝗼𝗻𝗠𝗲𝘁𝗵𝗼𝗱𝘀 𝗸𝗲𝘆𝗯𝗼𝗮𝗿𝗱-𝗶𝗻𝘁𝗲𝗿𝗮𝗰𝘁𝗶𝘃𝗲
+𝗘𝗢𝗙
+Crea un archivo de configuración de SSH que activa el método interactivo y obliga a pasar por PAM (contraseña más código).
+ 
+𝘀𝘂𝗱𝗼 𝘀𝘀𝗵𝗱 -𝘁
+Verifica que la configuración de SSH no tenga errores antes de reiniciar.
+ 
+𝘀𝘂𝗱𝗼 𝘀𝘆𝘀𝘁𝗲𝗺𝗰𝘁𝗹 𝗿𝗲𝘀𝘁𝗮𝗿𝘁 𝘀𝘀𝗵𝗱
+Reinicia el servicio SSH para aplicar los cambios.
+ 
+Paso 4: Demostración desde la máquina host hasta la VM
+ 
+𝘀𝘀𝗵 𝘃𝗮𝗹𝗲𝗻𝘁𝗶𝗻𝗮@𝟭𝟵𝟮.𝟭𝟲𝟴.𝟮𝟰𝟯.𝟭𝟯𝟬
+Se conecta por SSH desde la laptop a la VM; pide la contraseña y luego el código de Google Authenticator.
+ 
+Comandos de diagnóstico usados para resolver el error
+ 
+𝘀𝘂𝗱𝗼 𝘁𝗮𝗶𝗹 -𝗻 𝟮𝟬 /𝘃𝗮𝗿/𝗹𝗼𝗴/𝘀𝗲𝗰𝘂𝗿𝗲
+Muestra el registro de autenticaciones para ver por qué se rechazaba el acceso.
+ 
+𝘀𝘂𝗱𝗼 𝗮𝘂𝘀𝗲𝗮𝗿𝗰𝗵 -𝗺 𝗮𝘃𝗰 -𝘁𝘀 𝗿𝗲𝗰𝗲𝗻𝘁
+Muestra los bloqueos recientes de SELinux.
